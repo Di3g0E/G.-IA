@@ -5,7 +5,7 @@ else {
 
 // Creamos las variables que vamos a usar en el while
   int num = x;
-  int reversed = 0;
+  long int reversed = 0;
 
   while (num > 0){
 
