@@ -37,7 +37,6 @@ def mochilaVoraz1(peso, valor, pesoMax):
     return mochila
 
 # Programa Principal:
-#PesoValor = {peso: [10, 20, 30, 40, 50], valor: [20, 30, 66, 40, 60]}
 peso = [10, 20, 30, 40, 50]
 valor = [20, 30, 66, 40, 60]
 pesoMax = 100
