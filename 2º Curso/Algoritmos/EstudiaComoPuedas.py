@@ -1,22 +1,18 @@
-# El programa devuelve el resultado de si con las horas disponibles se aprueban o no las asignaturas
+numAsignaturas, numConvocatorias = map(int, input().strip().split())
+tEstudio = 0                                        # Horas necesarias para aprobar
+hAsignaturas = [0] * numAsignaturas                 # Lista de las horas de cada asignatura
+convocatorias = [0] * numConvocatorias              # Lista con las horas de cada convocatoria
+for i in range(0, numAsignaturas):                  # Guarda las horas de cada asignatura en su lista
+    asignaturas, hAsignaturas[i] = map(int, input(). strip().split())
+for i in range(0, numConvocatorias):                # Guarda las horas de cada convocatoria en su lista
+    convocatorias[i] = int(input())
 
-dicc = {}
+hAsignaturas.sort()                                     # Ordena de menor a mayor las horas de las asignaturas de menor a mayor
+for i in range(numAsignaturas):
+    tEstudio += hAsignaturas[i] * (numAsignaturas - i)  # Cálculo de las horas necesarias para aprobar
 
-# Pedir los datos: ·num de asiganturas y num de pruebas ·asignaturas y horas de estudio ·horas disponibles
-N, M = map(int, input().split())
-horDisp = [0] * M
-for i in range(N):
-    id, horas = map(int, input().split())
-    dicc[id] = horas
-for i in range(M):
-    horDisp[i] = int(input())
-
-# Sumar horas de estudio de asignaturas y compararlas con las disponibles
-suma = 0
-for key in dicc:
-    suma += dicc[key]
-for i in range(M):
-    if horDisp[i] >= suma:
+for i in convocatorias:                                 # Respuesta por pantalla
+    if i >= tEstudio:
         print("APROBADO")
     else:
         print("SUSPENSO")
