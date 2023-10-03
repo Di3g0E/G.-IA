@@ -58,3 +58,40 @@ tComplejo dividir(tComplejo complejo_UNO, tComplejo complejo_DOS) {
 tComplejo I(){
     return crearComplejo(0, 1);
 }
+
+// FIN ESPECIFICACIÓN COMPLEJOS
+
+// ESPECIFICACIÓN ENTEROS
+
+typedef struct {
+    int num;
+}tEntero;
+
+// Operaciones constructoras generadoras:
+tEntero CERO;
+tEntero SUCESOR(int num){
+    return num + 1;
+}
+tEntero PREDECESOR(int num){
+    return num - 1;
+}
+
+// Operaciones constructoras selectoras:
+
+// Operaciones constructoras no selectoras:
+
+// Operaciones constructoras no generadoras:
+tEntero sumarEntero(int num_UNO, int num_DOS){
+    return num_UNO + num_DOS;
+}
+tEntero restarEntero(int num_UNO, int num_DOS){
+    return num_UNO - num_DOS;
+}
+tEntero multiplicarEntero(int num_UNO, int num_DOS){
+    return num_UNO * num_DOS;
+}
+tEntero dividirEntero(int num_UNO, int num_DOS) {
+    return int(num_UNO / num_DOS);
+}
+
+// FIN ESPECIFICACIÓN ENTEROS
