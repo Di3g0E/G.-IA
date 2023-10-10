@@ -1,4 +1,48 @@
-N = 5       # Num valores
+
+def mochila(elem):
+
+
+# Inputs
+numElem = int(input())                              # Número de elementos que tenemos
+pesoSoportable = int(input())                       # Peso capaz de llevar en la mochila
+
+elem = []
+for i in range(numElem):
+    peso, valor = map(int, input().strip().split()) # Peso y valor de cada elemento
+    elem.append((valor / peso, peso, valor, i))     # Guarda en la lista la relación valor-peso, el peso, el valor y el id de cada elemento
+
+
+
+""" Ejemplo de prueba
+Input:
+5
+100
+10 20
+20 30
+30 66
+40 40
+50 60
+
+Output:
+164.0
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""N = 5       # Num valores
 W = 100     # Peso max que soporta la mochila
 w = [10, 20, 30, 40, 50]; v = [20, 30, 66, 40, 60]  # Peso y valores de los elementos a meter
 
@@ -25,4 +69,4 @@ valMochila = 0
 for elem in mochila:
     valMochila += elem
 
-print(valMochila)
+print(valMochila)"""

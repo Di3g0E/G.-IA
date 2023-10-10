@@ -15,11 +15,13 @@ for i in range(numClientes):
     cliente, tiempo = map(int, input().strip().split())     # Indicar el cliente y el tiempo de que tarda
     tiempoClientes.append((tiempo, cliente))                # Guarda la info. de cada cliente en tuplas dentro de la lista
 
+
+# Output
 time = tiemposEsperaMin(tiempoClientes)
 print(time / numClientes)                                   # Imprime por pantalla el tiempo medio tardado por cliente
 
 
-"""
+""" Ejemplo de prueba
 Input:
 3
 1 5
