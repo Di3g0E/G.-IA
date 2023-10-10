@@ -1,5 +1,6 @@
 
 def mochila(elem):
+    elem.sort(reverse = True)
 
 
 # Inputs
