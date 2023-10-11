@@ -12,15 +12,15 @@ def kruskal (n, edges):             # número de nodos y aristas del grafo
     edges.sort()                    # Ordenar los elementos de la lista de menor a mayor para ordenar los elementos por el conjunto de caminos de menor valor
 
     i = 0
-    while count > 1 and len(edges) > i: # Mientras el contador de componentes sea mayor que 1 e "i" valga menos que la cantidad de aristas que tenga el arbol se hará lo siguiente
-        w, u, v = edges[i]              # peso, origen y destino de los valores de edges[i]
-        if components[u] != components[v]:  # si los id de origen y destino no es el mismo es que no están conectados y hay que conectarlos
-            count -= 1
-            mst += w
-            update_components(components, components[u], components[v])
-        i += 1
+    while count > 1 and len(edges) > i:             # Mientras el contador de componentes sea mayor que 1 e "i" valga menos que la cantidad de aristas que tenga el arbol se hará lo siguiente
+        w, u, v = edges[i]                          # peso, origen y destino de los valores de edges[i]
+        if components[u] != components[v]:          # si los id de origen y destino no es el mismo es que no están conectados y hay que conectarlos
+            count -= 1                              # Se resta 1 a los componentes que no están conectados
+            mst += w                                # Se suma el peso de unión de los nodos a la suma de pesos total
+            update_components(components, components[u], components[v]) # Se actualiza el Id de los nodos para saber que ya están conectados
+        i += 1                                      # Se avanza una posición en la lista de valores que está ordenada de menor a mayor
 
-    return mst
+    return mst                                      # Devuelve la suma mínima de todos los pesos que conectan los nodos
 
 
 n, m = map(int, input().strip().split())
