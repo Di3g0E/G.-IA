@@ -1,10 +1,13 @@
-cesta = []
+
+
+"""cesta = []
 numAlimSuper, tamCesta = map(int, input().strip().split())
 
 for i in range(numAlimSuper):
     alimento, tamanio, valor = map(str, input().strip().split())
     tamanio = float(tamanio); valor = float(valor)
     cesta.append((valor/tamanio, alimento, tamanio, valor))
+
 cesta.sort(reverse=True)
 espacioLibre = 0
 i = 0
@@ -20,4 +23,4 @@ while espacioLibre != tamCesta:
         cantAlim += (cesta[i][3] + frac)
         espacioLibre = tamCesta
 
-print('{:.6f}'.format(cantAlim))
+print("%.6f" % cantAlim)"""

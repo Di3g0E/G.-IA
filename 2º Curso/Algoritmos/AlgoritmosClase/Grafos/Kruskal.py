@@ -1,4 +1,4 @@
-# Buscar el conjunto de caminos más corto que conecte todos los nodos
+# Buscar el conjunto de caminos más corto que conecte todos los nodos siguiendo las aristas
 def update_components(components, old_id, new_id):  # actualiza el id de los componentes para saber por cuáles has pasado
     for i in range(len(components)):                # el bucle busca el compomente con el mismo valor
         if components[i] == old_id:
