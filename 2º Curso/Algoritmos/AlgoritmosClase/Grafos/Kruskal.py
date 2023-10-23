@@ -5,11 +5,11 @@ def update_components(components, old_id, new_id):  # actualiza el id de los com
             components[i] = new_id                  # cuando lo encuentra le da el nuevo valor para conectar los dos nodos
     return components
 
-def kruskal (n, edges):             # número de nodos y aristas del grafo
-    components = list(range(n))     # la lista indica el índice que tiene cada nodo
-    count = n                       # hay n componentes
-    mst = 0                         # arbol de recubrimiento mínimo con siglas en inglés (coste)
-    edges.sort()                    # Ordenar los elementos de la lista de menor a mayor para ordenar los elementos por el conjunto de caminos de menor valor
+def kruskal (n, edges):                             # número de nodos y lista del grafo
+    components = list(range(n))                     # la lista indica el índice que tiene cada nodo
+    count = n                                       # hay n componentes
+    mst = 0                                         # arbol de recubrimiento mínimo con siglas en inglés (coste)
+    edges.sort()                                    # Ordenar los elementos de la lista de menor a mayor para ordenar los elementos por el conjunto de caminos de menor valor
 
     i = 0
     while count > 1 and len(edges) > i:             # Mientras el contador de componentes sea mayor que 1 e "i" valga menos que la cantidad de aristas que tenga el arbol se hará lo siguiente
@@ -23,11 +23,13 @@ def kruskal (n, edges):             # número de nodos y aristas del grafo
     return mst                                      # Devuelve la suma mínima de todos los pesos que conectan los nodos
 
 
-n, m = map(int, input().strip().split())
+##############################################  PROGRAMA PRINCIPAL  ####################################################
+
+n, m = map(int, input().strip().split())            # Indicar el número de nodos y aristas
 edges = []
 for _ in range(m):
     w, u, v = map(int, input().strip().split())
-    edges.append((w, u, v))
+    edges.append((w, u, v))                         # Añadir a la lista el número del nodo de origen, final y el valor de la arista
 
 mst = kruskal(n, edges)
 print(mst)

@@ -1,42 +1,41 @@
-import copy
+def costes(costeHabitaciones, coste, h1, h2):
+    costeHabitaciones[h1] += coste
+    costeHabitaciones[h2] += coste
+    return costeHabitaciones
 
-"""def coste_habitacion(cost_hab, c, orig, dest):
-    cost_hab[orig] += c
-    cost_hab[dest] += c"""
-
-def cambioId(components, old_id, new_id):
+def conectarHabitaciones(components, h1, h2):
     for i in range(len(components)):
-        if components[i] == old_id:
-            components[i] = new_id
+        if components[i] == h1:
+            components[i] = h2
     return components
 
-def kruskal(nodos, edges):
-    components = list(range(nodos))
-    count = nodos
-    mst = 0
-""" cost_hab = [] * nodos       # creamos una lista para llevar el conteo de los costes de los nodos"""
+def kruskalHabitaciones(n, edges):
+    components = list(range(n))
+    costeHabitacion = [0] * n
+    cont = n
+    cosTotal = 0
     edges.sort()
+
     i = 0
-    while count > 1 and len(edges) > i:
-        c, o, d, cost_hab = edges[i]
-        if components[o] != components[d]:
-            count -= 1
-            mst += c
-"""         coste_habitacion(cost_hab, c, o, d)   # Sumamos los costes a los respectivos nodos"""
-            cambioId(components, components[o], components[d])
+    while cont > 1 and i < len(edges):
+        d, h1, h2 = edges[i]
+        if components[h1] != components[h2]:
+            conectarHabitaciones(components, components[h1], components[h2])
+            costes(costeHabitacion, d, h1, h2)
+            cont -= 1
+            cosTotal += d
         i += 1
+    return cosTotal, costeHabitacion
 
-    return mst, cost_hab
+# Programa Principal:
 
+N, M = map(int, input().strip().split())
+edges = []
+for i in range(M):
+    h1, h2, d = map(int, input().strip().split())
+    edges.append((d, h1, h2))
 
-# Programa principal:
-numHabitaciones, numPasillos = map(int, input().strip().split())
-mapa = []
-for _ in range(numPasillos):
-    origen, destino, coste = map(int, input().strip().split())
-    mapa.append((coste, origen, destino, 0))
-
-mst, coste_habitacion = kruskal(numHabitaciones, mapa)
-print(f"Coste total: {mst}")
-for i in range(len(coste_habitacion)):
-    print(f"H{i}: {coste_habitacion[i][3]}")
+cosTotal, costHabitacion = kruskalHabitaciones(N, edges)
+print("Coste total:",cosTotal)
+for i in range(N):
+    print(f"H{i}: {costHabitacion[i]}")

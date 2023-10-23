@@ -1,46 +1,37 @@
 
-numPart, tamGroup = map(int, input().strip().split())       # Inicar el num. de participantes y el tamaño máximo del primer grupo
-participantes = []                                          # Lista en la que meter la info. de cada participante
+numPart, numGrup = map(int, input().strip().split())        # Indicar el núm. de participantes y miembros que entran en un grupo
+participantes = []                                          # Lista con la info. de los participantes
 
 for i in range(numPart):
-    nombre, edad = map(str, input().strip().split())        # Pedir el nombre y la edad de cada participante
-    participantes.append((int(edad), nombre))               # Añadir a cada participante en la lista
-
-participantes.sort()                                        # Ordenar la lista de menor a mayor por edades
-tam = 0                                                     # Guarda para el bucle while. No puede superar el tamaño max. y nos indicará cuando cambiar de grupo
-g1, g2 = [], []
-while tam < numPart:
-    if tam > tamGroup:
-        g1.append(participantes[tam][1])
-    else:
-        g2.append(participantes[tam][1])
-    tam += 1
-
-print(*g1)                                                  # Imprime los nombres de cada integrante del grupo 1 sin los corchetes
-print(*g2)                                                  # Imprime los nombres de cada integrante del grupo 2 sin los corchetes
-
-
-
-
-
-
-
-
-
-
-'''numParticipantes, tamGrupos = map(int, input().strip().split())     # Indicar el num. de participantes y el tamaño de cada grupo
-participantes = []
-
-for i in range(numParticipantes):
     nombre, edad = map(str, input().strip().split())
-    participantes.append((edad, nombre))
+    participantes.append((int(edad), nombre))               # Guardar las tuplas con la edad y el nombre en la lista
 
-participantes.sort()
-jovenes, noTanJovenes = [], []
-for i in range(numParticipantes):
-    if i < (numParticipantes//2):
-        jovenes.append(participantes[i][1])
-    else: noTanJovenes.append((participantes[i][1]))
+participantes.sort()                                        # Ordenar la lista de menor a mayor
+y1, v1, = participantes[:numGrup], participantes[numGrup:]  # Crear dos listas con el grupo de jóvenes de tamaño numGrup
+participantes.sort(reverse=True)                            # Ordenar la lista de mayor a menor
+y2, v2 = participantes[numGrup:], participantes[:numGrup]   # Crear dos listas con el grupo de mayores de tamaño numGrup
+sumaY1, sumaV2, sumaV1, sumaY2, i = 0, 0, 0, 0, 0
+while i < numPart-numGrup:                                  # Sumar las edades de cada grupo para comparar
+    if i < numGrup:
+        sumaV1 += v1[i][0]
+        sumaY2 += y2[i][0]
+        sumaY1 += y1[i][0]
+        sumaV2 += v2[i][0]
+    else:
+        sumaY2 += y2[i][0]
+        sumaV1 += v1[i][0]
+    i += 1
 
-print(*jovenes)
-print(*noTanJovenes)'''
+if sumaV1-sumaY1 > sumaV2-sumaY2:                           # Si las edades de las listas de jóvenes de tamaño numGrup y mayores
+    for i in range(len(y1)):                                # tienen mayor diferencia que las segundas imprimir estas
+        print(y1[i][1], end=" ")
+    print()
+    for i in range(len(v1)):
+        print(v1[i][1], end=" ")
+else:                                                       # Si las segundas listas tienen mayor diferencia de edad que las primeras
+    y2.reverse(), v2.reverse()                              # revertir el orden de los elementos de las listas e imprimirlos
+    for i in range(len(y2),):
+        print(y2[i][1], end=" ")
+    print()
+    for i in range(len(v2),):
+        print(v2[i][1], end=" ")
