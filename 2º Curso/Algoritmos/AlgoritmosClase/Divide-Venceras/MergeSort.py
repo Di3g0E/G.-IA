@@ -1,3 +1,5 @@
+
+
 def sort(l1, l2):                                   # Esta función ordena los elementos de dos listas dadas
     listaOrdenada = []                              # Lista en la que guardaremos los elem ordenados
     i, j = 0, 0                                     # Guardas para las diferentes listas, no tienen porqué ser del mismo tamaño
@@ -15,6 +17,7 @@ def sort(l1, l2):                                   # Esta función ordena los e
 
     return listaOrdenada
 
+
 def mergeSort(lista, val_in, val_fin):              # Esta función dibide la lista por la mitad recursivamente hasta tener un único valor y después los va ordenando
     mitad = (val_in + val_fin) // 2                 # Cálculo de la mitad de la lista
     if val_fin <= val_in:                           # Si sólo hay un valor en la lista lo devuelve
@@ -25,5 +28,12 @@ def mergeSort(lista, val_in, val_fin):              # Esta función dibide la li
         sol = sort(l1, l2)                          # Llamada a la función de ordenación que ordenará las listas guardadas en l1 y l2
         return sol
 
+
+###############################################   Programa Principal    ################################################
 l = [1, 10, 2, 9, 3, 8, 4 , 7, 5 ,6]
-print(mergeSort(l, 0, len(l)-1))
+l1 = [7, 6, 2, 3, 4, 65, 8, 63, 74, 5, 78]
+
+sol = mergeSort(l, 0, len(l)-1)
+sol1 = mergeSort(l1, 0, len(l1)-1)
+
+print(f'{sol}\n{sol1}')
