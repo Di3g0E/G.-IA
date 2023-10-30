@@ -119,19 +119,38 @@ def kruskal():
 
 def djikstra():
 # Descripción: Este programa recorre el grafo desde un nodo inicial indicado pasando por todos los nodos que estén conectados calculando el recorrido mínimo a cada nodo desde el nodo inicial
+# Subprogramas:
+    def actualizarDistancia(grafo, vector_distancia, nodo):
+        for vecino, dist in grafo[nodo].items():                # Recorre los nodos conectados con el nodo en el que nos encontramos
+            distancia = vector_distancia[nodo] + dist           # Suma la distancia del nodo inicial hasta el nodo en el que nos encontramos y suma la distancia que hay hata el siguiente al que miramos
+            if distancia < vector_distancia[vecino]:            # Si la suma de las distancias al siguiente nodo es menor que la distancia del nodo inicial y el nodo al que nos dirigimos actualizamos la distancia
+                vector_distancia[vecino] = distancia
 
 # Input:
-    nodo_inicial = str(input())                                 # Recibe el nombre del nodo inicial
-    grafo = input()                                             # Recibe un diccionario de diccionarios con los nodos conectados y los valores de sus aristas
+    grafo = {'A': {'B': 1, 'C': 3},
+             'B': {'A': 1, 'C': 2, 'D': 5},
+             'C': {'A': 4, 'B': 2, 'D': 1},
+             'D': {'B': 5, 'C': 1}}
+    nodo_inicial = 'A'
 
 # Programa Principal:
     distancia = {node: float('inf') for node in grafo}          # Inicializa a 'infinito' un diccionario con la distancia de los nodos al nodo origen
     distancia[nodo_inicial] = 0                                 # Indica que la distancia del nodo inicial a sí mismo es 0
-    visitados = [nodo_inicial]                                  # Crea una lista que guardará los nodos visitados
-    flag = False                                                # Guarda para el bucle while que sale del bucle si no todos los nodos están conectados
+    visitados = []                                              # Crea una lista que guardará los nodos visitados
 
     while len(visitados) < len(grafo):                          # Mientras la lista de nodos visitados tenga menos nodos que el grafo o ya no queden nodos conectados
+        prox_nodo = None
+        for node in grafo:
+            if node not in visitados:
+                if prox_nodo is None:
+                    prox_nodo = node
+                elif distancia[node] < distancia[prox_nodo]:
+                    prox_nodo = node
 
+        visitados.append(prox_nodo)
+        actualizarDistancia(grafo, distancia, prox_nodo)
+
+    return distancia
 
 
 # Prueba programas:
@@ -210,4 +229,15 @@ Input:
 
 Output:
 El coste minimo del grafo conectado es: 306
+'''
+
+
+print('Programa Djikstra:')
+solucion = djikstra()
+print('Las distancias mínimas desde el nodo inicial al resto de nodos son:\t', solucion)
+
+'''
+Input: Los valores del ejemplo ya están incluidos dentro de la función
+Output:
+Las distancias mínimas desde el nodo inicial al resto de nodos son:	 {'A': 0, 'B': 1, 'C': 3, 'D': 4}
 '''
