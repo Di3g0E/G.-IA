@@ -153,6 +153,20 @@ def djikstra():
     return distancia
 
 
+def busquedaBinaria(lista, ini, fin, elem):
+# Descripción: El programa busca un elemento en una lista ordenada y devuelve la posición que ocupa
+#Programa principal:
+    if ini <= fin:                                              # Mientras el índice de la derecha de la lista sea mayor que el de la izquierda
+        medio = (ini + fin) // 2                                # Se calcula la posición intermedia entre los dos índices
+        if lista[medio] == elem:                                # Si la posición intermedia es el elem. que se busca se devuelve esa posición
+            return medio
+        elif lista[medio] > elem:                               # Si el valor de la posición intermedia es mayor que el elem. buscado
+            return busquedaBinaria(lista, ini, medio-1, elem)   # Se repite el algoritmo buscando únicamente en la primera mitad de la lista
+        else:                                                   # Si el valor de la posición intermedia es menor que el elem. buscado
+            return busquedaBinaria(lista, medio+1, fin, elem)   # Se repite el algoritmo buscando únicamente en la segunda mitad de la lista
+    return -1
+
+
 # Prueba programas:
 
 #print('Programa Mochila:')
@@ -232,12 +246,25 @@ El coste minimo del grafo conectado es: 306
 '''
 
 
-print('Programa Djikstra:')
-solucion = djikstra()
-print('Las distancias mínimas desde el nodo inicial al resto de nodos son:\t', solucion)
+#print('Programa Djikstra:')
+#solucion = djikstra()
+#print('Las distancias mínimas desde el nodo inicial al resto de nodos son:\t', solucion)
 
 '''
 Input: Los valores del ejemplo ya están incluidos dentro de la función
 Output:
 Las distancias mínimas desde el nodo inicial al resto de nodos son:	 {'A': 0, 'B': 1, 'C': 3, 'D': 4}
+'''
+
+
+print('Programa Busqueda Binaria:')
+l = list(range(1, 19))                              # Lista ordenada del 1 al 18
+e = 9                                               # Elem. que se busca es el '9'
+solucion = busquedaBinaria(l, 0, len(l)-1, e)
+print('La posición que ocupa el elemento en la lista es:\t', solucion)
+
+'''
+Input: Los valores del ejemplo ya están incluidos encima de la función
+Output:
+La posición que ocupa el elemento en la lista es:	 8
 '''
