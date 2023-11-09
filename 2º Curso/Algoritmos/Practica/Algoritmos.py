@@ -167,6 +167,34 @@ def busquedaBinaria(lista, ini, fin, elem):
     return -1
 
 
+def mergeSort(lista, ini, fin):
+    def sort(lista_1, lista_2):
+        listaOrdenada = []
+        i, j = 0, 0
+
+        while i < len(lista_1) and j < len(lista_2):
+            if lista_1[i] < lista_2[j]:
+                listaOrdenada.append(lista_1[i])
+                i += 1
+            else:
+                listaOrdenada.append(lista_2[j])
+                j += 1
+
+        listaOrdenada.extend(lista_1[i:])
+        listaOrdenada.extend(lista_2[j:])
+
+        return listaOrdenada
+
+    mitad = (ini + fin) // 2
+    if fin <= ini:
+        return [lista[ini]]
+    else:
+        l1 = mergeSort(lista, ini, mitad)
+        l2 = mergeSort(lista, mitad+1, fin)
+        sol = sort(l1, l2)
+        return sol
+
+
 # Prueba programas:
 
 #print('Programa Mochila:')
@@ -205,7 +233,7 @@ El beneficio total es: 80
 
 #print('Programa tiempos_espera:')
 #orden, tiempo = tiepos_espera()
-#print('El orden de los clientes es: ', *orden), print(f'El tiempo medio por cada cliente es: {tiempo:.2f}')
+#print('El orden de los clientes es: ', orden), print(f'El tiempo medio por cada cliente es: {tiempo}')
 '''
 Input:
 3
@@ -249,7 +277,6 @@ El coste minimo del grafo conectado es: 306
 #print('Programa Djikstra:')
 #solucion = djikstra()
 #print('Las distancias mínimas desde el nodo inicial al resto de nodos son:\t', solucion)
-
 '''
 Input: Los valores del ejemplo ya están incluidos dentro de la función
 Output:
@@ -257,12 +284,22 @@ Las distancias mínimas desde el nodo inicial al resto de nodos son:	 {'A': 0, '
 '''
 
 
-print('Programa Busqueda Binaria:')
-l = list(range(1, 19))                              # Lista ordenada del 1 al 18
-e = 9                                               # Elem. que se busca es el '9'
-solucion = busquedaBinaria(l, 0, len(l)-1, e)
-print('La posición que ocupa el elemento en la lista es:\t', solucion)
+#print('Programa Busqueda Binaria:')
+#l = list(range(1, 19))                              # Lista ordenada del 1 al 18
+#e = 9                                               # Elem. que se busca es el '9'
+#solucion = busquedaBinaria(l, 0, len(l)-1, e)
+#print('La posición que ocupa el elemento en la lista es:\t', solucion)
+'''
+Input: Los valores del ejemplo ya están incluidos encima de la función
+Output:
+La posición que ocupa el elemento en la lista es:	 8
+'''
 
+
+#print('Programa Merge Sort:')
+#l = [7, 6, 2, 3, 4, 10, 65, 8, 63, 74, 5, 10, 78]   # Lista desordenada
+#solucion = mergeSort(l, 0, len(l)-1)
+#print('La lista ordenada es:\t', *solucion)
 '''
 Input: Los valores del ejemplo ya están incluidos encima de la función
 Output:

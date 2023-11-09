@@ -79,7 +79,7 @@ def imprimir1(sol):
 
 
 # Programa Principal:
-N = 101   # Tamaño tablero
+N = 51   # Tamaño tablero
 sol = inicializar(N)
 fila = 0
 sol, esSol = nDamas(sol, fila)

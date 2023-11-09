@@ -12,5 +12,5 @@ def busquedaBinaria(lista, inicio, final, elem):
 
 
 l = list(range(1, 19))
-e = 9
+e = 8
 print(busquedaBinaria(l, 0, len(l), e))

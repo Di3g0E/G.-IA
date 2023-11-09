@@ -20,7 +20,7 @@ def sort(l1, l2):                                   # Esta función ordena los e
 
 def mergeSort(lista, val_in, val_fin):              # Esta función dibide la lista por la mitad recursivamente hasta tener un único valor y después los va ordenando
     mitad = (val_in + val_fin) // 2                 # Cálculo de la mitad de la lista
-    if val_fin <= val_in:                           # Si sólo hay un valor en la lista lo devuelve
+    if val_fin <= val_in:                           # Si solo hay un valor en la lista lo devuelve
         return [lista[val_in]]
     else:
         l1 = mergeSort(lista, val_in, mitad)        # Llamada recursiva de la lista desde el valor inicial hasta la mitad calculada
@@ -31,7 +31,7 @@ def mergeSort(lista, val_in, val_fin):              # Esta función dibide la li
 
 ###############################################   Programa Principal    ################################################
 l = [1, 10, 2, 9, 3, 8, 4 , 7, 5 ,6]
-l1 = [7, 6, 2, 3, 4, 65, 8, 63, 74, 5, 78]
+l1 = [7, 6, 2, 3, 4, 10, 65, 8, 63, 74, 5, 78]
 
 sol = mergeSort(l, 0, len(l)-1)
 sol1 = mergeSort(l1, 0, len(l1)-1)

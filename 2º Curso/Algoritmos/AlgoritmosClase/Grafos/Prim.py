@@ -14,3 +14,5 @@ def prim(grafo):                    # Funciona siguiendo los nodos
                 arbol_expansion_minima.append((u, v, costo_minimo[v]))
 
     return arbol_expansion_minima
+
+
