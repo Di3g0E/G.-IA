@@ -21,5 +21,5 @@ cons_fam = int(input())
 nivel_miembros = []
 for i in range(cons_fam):
     miembro = int(input())
-    cont = 0
-    sol = busquedaBinaria(arbol)
+    cont = 1
+    sol = busquedaBinaria(arbol, 0, len(arbol), miembro, cont)
