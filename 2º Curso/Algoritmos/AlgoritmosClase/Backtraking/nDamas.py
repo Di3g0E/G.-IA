@@ -70,12 +70,12 @@ def imprimir(tablero):
                 print('o\t', end ='')
         print()
 
-def imprimir1(sol):
+'''def imprimir1(sol):
     N = len(sol)
     tablero = inicializar1(N)
     for f in range(N):
         tablero[f][sol[f]] = "\u2655"
-        print(tablero[f])
+        print(tablero[f])'''
 
 
 # Programa Principal:

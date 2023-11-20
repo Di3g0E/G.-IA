@@ -1,0 +1,71 @@
+ESPECIFICACION CONJUNTOS
+	PARAMETROS GENERICOS
+		TIPO tElem
+	FIN PARAMETROS
+	
+	TIPO tConjunto
+	
+	OPERACIONES
+		(* GENERADORAS CONSTRUCTORAS *):
+			crearConjuntoVacio: -> tConjunto
+			poner: tConjunto x tElem -> tConjunto
+		
+		(* OBSERVADORAS SELECTORAS *):
+			PARCIAL elegir: tConjunto -> tElem																																	*
+		
+		(* OBSERVADORAS NO SELECTORAS *):
+			esConjuntoVacio: tConjunto -> Booleano
+			pertenece: tConjunto x tElem -> Booleano
+			esSubconjunto: tConjunto x tConjunto -> Booleano
+			cardinal: tConjunto -> Natural
+			
+		(* GENERADORAS NO CONSTRUCTORAS *):
+			quitar: tConjunto x tElem -> tConjunto
+			union: tConjunto x tConjunto -> tConjunto
+			interseccion: tConjunto x tConjunto -> tConjunto
+			diferencia: tConjunto x tConjunto -> tConjunto
+	
+	VARIABLES
+		conjunto, conjunto2 : tConjunto;
+		i, j, e1, e2: tElem;
+		
+	ECUACIONES DE DEFINITUD
+		DEF(elegir(poner(conjunto, i))																																			*
+		
+	ECUACIONES ENTRE GENERADORAS
+		poner(poner(conjunto, e1), e2) = poner(poner(conjunto, e2), e1)
+		poner(poner(conjunto, e1), e1) = poner(conjunto, e1)
+		
+	ECUACIONES
+		(* OBSERVADORAS SELECTORAS *)
+			elegir(poner(conjunto, i)) = pertenece(poner(conjunto, i), j)																										*
+		
+		(* OBSERVADORAS NO SELECTORAS *)
+			esConjuntoVacio(crearConjuntoVacio) = TRUE
+			esConjuntoVacio(poner(conjunto, i) = FALSE
+			
+			pertenece(crearConjuntoVacio) = FALSE
+			pertenece(poner(conjunto, i), j) = (i == j) | pertenece(conjunto, j)
+			
+			esSubconjunto(crearConjuntoVacio, conjunto2) = FALSE
+			esSubconjunto(poner(conjunto, i), conjunto2) = pertenece(conjunto2, i) & esSubconjunto(conjunto, conjunto2)
+			
+			cardinal(crearConjuntoVacio) = 0
+			cardinal(poner(conjunto, i)) = Si pertenece(conjunto, i) -> 1 + cardinal(conjunto) | cardinal(conjunto)																*
+			cardinal(poner(conjunto, i)) = Si pertenece(conjunto, i)-> cardinal(conjunto) | 1 + cardinal(conjunto)
+			
+		(* CONSTRUCTORAS NO GENERADORAS *)
+			quitar(crearConjuntoVacio, i) = crearConjuntoVacio
+			quitar(poner(conjunto, i), j) = Si pertenece(conjunto, i) & (i == j) -> conjunto | poner(quitar(conjunto, j), i)													*
+			quitar(poner(conjunto, i), j) = Si (i == j) -> quitar(conjunto, i) | poner(quitar(conjunto, j), i)
+			
+			union(crearConjuntoVacio, conjunto2) = conjunto2
+			union(poner(conjunto, i), conjunto2) = poner(union(conjunto, conjunto2), i)
+			
+			interseccion(crearConjuntoVacio, conjunto2) = crearConjuntoVacio
+			interseccion(poner(conjunto, i), conjunto2) = Si pertenece(conjunto2, i) -> poner(interseccion(conjunto, conjunto2), i) | interseccion(conjunto, conjunto2)
+			
+			diferencia(conjunto, crearConjuntoVacio) = conjunto
+			diferencia(conjunto, poner(conjunto2, i)) = diferencia(quitar(conjunto, i), conjunto2)
+			
+FIN ESPECIFICACION
