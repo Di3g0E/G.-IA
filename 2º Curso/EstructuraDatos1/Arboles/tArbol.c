@@ -30,3 +30,20 @@ int existeDios(tArbol a, tDios d){
     }
     return 0;
 }
+
+
+int esPadre(tArbol p, tArbol h){
+    return mismoDios(p->izq->info, h->info) || mismoDios(p->der->info, h->info);
+}
+
+
+int mostrarArbol(tArbol a){
+    mostrarDios(a->info);
+    if (a->izq != NULL){
+        mostrarArbol(a->izq);
+    } else {
+        if (a->der != NULL) {
+            mostrarArbol(a->der);
+        }
+    }
+}

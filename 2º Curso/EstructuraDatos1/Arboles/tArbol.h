@@ -21,6 +21,8 @@ typedef tNodo *tArbol;
 void crearArbolBinVacio(tArbol * a);
 void construirArbolB(tArbol *a, tArbol *izq, tArbol *der, tDios r);
 int existeDios(tArbol a, tDios d);
+int esPadre(tArbol p, tArbol h);
+int mostrarArbol(tArbol a);
 
 
 #endif //ARBOL_TARBOL_H

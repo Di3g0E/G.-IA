@@ -16,6 +16,13 @@ int main() {
 // Existe el dios en el arbol:
     existeDios(cronos, diosCronos);
 
+// Es padre:
+    esPadre(poseidon, pegaso);
+    esPadre(cronos, teseo);
+
+// Mostrar arbol por pantalla:
+    mostrarArbol(cronos);
+
 
     return 0;
 }

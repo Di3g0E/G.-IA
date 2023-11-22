@@ -14,3 +14,13 @@ void crearDios(tDios *d, char nom[N], char descr[M]){
     strcpy(d->nombre, nom);
     strcpy(d->descripcion, descr);
 }
+
+
+void mostrarDios(tDios d){
+    printf(d.nombre);
+}
+
+
+int mismoDios(tDios a, tDios b){
+    return strcmp(a.nombre, b.nombre);
+}
