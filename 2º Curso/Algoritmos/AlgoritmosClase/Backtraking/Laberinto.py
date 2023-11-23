@@ -25,7 +25,7 @@ def laberintoVA(lab, mejorSol, fil, col, cont):
                 newC = col + desp[1]
                 if esFactible(lab, newF, newC):
                     lab[newF][newC] = cont
-                    mejorSol = laberintoVA(lab, newF, newC, cont+1)
+                    mejorSol = laberintoVA(lab, mejorSol, newF, newC, cont+1)
                     lab[newF][newC] = 0
 
         return mejorSol

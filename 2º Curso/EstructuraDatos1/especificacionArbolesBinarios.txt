@@ -1,0 +1,73 @@
+ESPECIFICACION ARBOLES
+	PARAMETROS GENERICOS
+		TIPO tElem
+	FIN PARAMETROS
+	
+	TIPO tArbolBin
+	
+	OPERACIONES
+		(* CONSTRUCTORAS GENERADORAS *)
+			crearArbolVacio: -> tArbolBin
+			construir: tArbolBin x tElem x tArbolBin -> tArbolBin
+		
+		(* OBSERVADORAS SELECTORAS *)
+			raiz: tArbolBin -> tElem
+			hijoIzq: tArbolBin -> tArbolBin
+			hijoDer: tArbolBin -> tArbolBin
+		
+		(* OBSERVADORAS NO SELECTORAS *)
+			esArbolVacio: tArbolBin -> Booleano
+			esHoja: tArbolBin -> Booleano
+			esIgual: tArbolBin x tArbolBin -> Booleano
+			pertenece: tArbolBin x tArbolBin -> Booleano
+			altura: tArbolBin x tArbolBin -> Entero
+			numNodos: tArbolBin -> Entero
+			numHojas: tArbolBin -> Entero
+			nivelElem: tArbolBin x tElem -> Entero
+			compensado: tArbolBin -> Booleano
+
+		
+		(* CONSTRUCTORAS NO GENERADORAS *)
+			
+	VARIABLES
+		a, a2, izq, izq2, der, der2 : tArbolBin
+		r, r2 : tElem
+	
+	ECUACIONES DE DEFINITUD
+		DEF(raiz(construir(izq, r, der)))
+		DEF(hijoIzq(construir(izq, r, der)))
+		DEF(hijoDer(construir(izq, r, der)))
+		DEF(pertenece(construir(izq, r, der), construir(izq2, r2, der2)))
+	
+	ECUACIONES ENTRE GENERADORAS
+	
+	ECUACIONES
+		(* OBSERVADORAS SELECTORAS *)
+			raiz(construir(izq, r, der)) = r
+			hijoIzq(construir(izq, r, der)) = izq
+			hijoDer(construir(izq, r, der)) = der
+		
+		(* OBSERVADORAS NO SELECTORAS *)
+			esArbolVacio(crearArbolVacio()) = TRUE
+			esArbolVacio(construir(izq, r, der)) = FALSE
+			
+			esHoja(crearArbolVacio) = FALSE
+			esHoja(construir(izq, r, der)) = if (esArbolVacio(izq) & esArbolVacio(der)) -> TRUE | FALSE
+			
+			esIgual(crearArbolVacio(), crearArbolVacio()) = TRUE
+			esIgual(crearArbolVacio(), construir(izq, r, der)) = FALSE
+			esIgual(construir(izq, r, der), crearArbolVacio()) = FALSE
+			esIgual(construir(izq, r, der), construir(izq2, r2, der2)) = if (esArbolVacio(izq) & esArbolVacio(der) & (r == r2)) -> TRUE | (esIgual(izq, izq2) & esIgual(der, der2) & (r == r2))
+			
+			pertenece(construir(izq, r, der), construir(izq2, r2, der2)) = if (esIgual(izq, construir(izq2, r2, der2)) | esIgual(der, construir(izq2, r2, der2))) | (pertenece(izq, construir(izq2, r2, der2)) | pertenece(der, construir(izq2, r2, der2)))
+
+			altura(crearArbolVacio()) = 0
+			altura(construir(izq, r, der)) = 1 + max(altura(izq), altura(der))
+			
+			numNodos(crearArbolVacio()) = 0
+			numNodos(construir(izq, r, der)) = 1 + numNodos(izq) + numNodos(der)
+			
+			numHojas(crearArbolVacio())
+			
+			compensado(crearArbolVacio()) = TRUE
+			compensado(construir(izq, r, der)) = (numNodos(izq) == numNodos(der))
