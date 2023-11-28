@@ -18,13 +18,16 @@ void construirArbolB(tArbol *a, tArbol *izq, tArbol *der, tDios r){
 
 
 int existeDios(tArbol a, tDios d){
-    if (a->info.nombre == d.nombre){
+    char arNom[10], diNom[10];
+    strcpy(arNom, a->info.nombre);
+    strcpy(diNom, d.nombre);
+    if (strcmp(arNom, diNom) == 0){
         return 1;
     } else {
-        if (existeDios(a->izq, d)) {
+        if (existeDios(a->izq, d) && a != NULL) {
             return existeDios(a->izq, d);
         }
-        if (existeDios(a->der, d)){
+        if (existeDios(a->der, d) && a != NULL){
             return existeDios(a->der, d);
         }
     }

@@ -10,7 +10,7 @@ void asignar(tDios *info, tDios e){
 }
 
 
-void crearDios(tDios *d, char nom[N], char descr[M]){
+void crearDios(tDios *d, char* nom, char* descr){
     strcpy(d->nombre, nom);
     strcpy(d->descripcion, descr);
 }
