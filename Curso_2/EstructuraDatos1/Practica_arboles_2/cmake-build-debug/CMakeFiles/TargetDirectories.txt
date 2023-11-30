@@ -1,0 +1,3 @@
+C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/EstructuraDatos1/Practica_arboles_2/cmake-build-debug/CMakeFiles/Practica_arboles_2.dir
+C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/EstructuraDatos1/Practica_arboles_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/EstructuraDatos1/Practica_arboles_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

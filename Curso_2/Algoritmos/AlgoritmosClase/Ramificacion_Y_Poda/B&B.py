@@ -1,96 +1,104 @@
 import heapq
 
-def get_csf(cost_matrix, partial_solution):
-    csf = 0
-    for i in range(len(cost_matrix)):
-        if partial_solution[i] != -1:
-            csf += cost_matrix[i][partial_solution[i]]
-    return csf
+'''
+Generamos la solución inicial basándonos en el algoritmo voraz
+de las transparencias: elegir la diagonal 
+(podríamos partir también de lo que comentamos en clase: asignar la tarea de menor valor a cada agente)
+'''
+def initSol(cost_matrix):
+	initial_sol = []
+	cost = 0
+	# Seleccionamos la diagonal de la matriz como primera aproximación
+	for i in range(len(cost_matrix)):
+		initial_sol.append(i)
+		cost += cost_matrix[i][i]
+	return cost, initial_sol
 
-def get_gfc(cost_matrix, partial_solution):
-    gfc = 0
-    n = len(cost_matrix)
-    free_rows = [i for i in range(n) if i not in partial_solution]
-    free_col = [i for i in range(n) if i not in partial_solution]
+'''
+Función que calcula el coste de la solución actual
+'''
+def cost(sol, cost_matrix):
+	cost = 0
+	for i in range(len(sol)):
+		cost += cost_matrix[i][sol[i]]
+	return cost
 
-    for i in free_rows:
-        min_elem = float('inf')
-        for j in free_col:
-            if cost_matrix[i][j] < min_elem:
-                min_elem = cost_matrix[i][j]
-        gfc += min_elem
+'''
+Función que evalúa si ya hemos alcanzado una solución, es decir:
+hemos asignado todas las tareas
+'''
+def isSol(sol, n):
+	return len(sol[1]) == n
 
-    return gfc
 
-def get_ffc(cost_matrix, partial_solution):
-    ffc = 0
-    n = len(cost_matrix)
-    free_row = [i for i in range(n) if i not in partial_solution]
-    free_col = [i for i in range(n) if i not in partial_solution]
+'''
+Esta función calcula la cota inferior de la solución actual,
+asignando la tarea sin asignar de menor coste a cada agente libre
+'''
+def lowerBound(sol, cost_matrix):
+	assignedTasks = sol.copy()
+	bound = cost(sol, cost_matrix)
+	for e in range(len(cost_matrix)):
+		min_cost = float('inf')
+		if e not in assignedTasks:
+			for i in range(len(cost_matrix)):
+				if (cost_matrix[i][e] < min_cost):
+					min_cost = cost_matrix[i][e]
+			assignedTasks.append(e)
+			bound += min_cost
+	return bound
 
-    for i in free_row:
-        min_elem = float('inf')
-        for j in free_col:
-            if cost_matrix[i][j] < min_elem:
-                min_elem = cost_matrix[i][j]
-        ffc += min_elem
 
-    return ffc
+'''
+Esta función expande todos los hijos de un nodo concreto,
+siendo un nodo una solución parcial
+'''
+def complete(sol, n):
+	childs = []
+	for i in range(n):
+		act_sol = sol[1].copy()
+		if i not in act_sol:
+			act_sol.append(i)
+			lower_bound = lowerBound(act_sol, cost_matrix)
+			partial_tuple = (lower_bound, act_sol)
+			childs.append(partial_tuple)
+	return childs
 
-def job_assignment(cost_matrix):
-    n = len(cost_matrix)
-    global_upper_bound = float('inf')
-    assigned_tasks = []
-    P = []
+'''
+Este método implementa el Branch and Bound completo
+utilizando una cola de prioridad para explorar el nodo más
+prometedor en un momento dado
+'''
+def ByB(cost_matrix):
+	n = len(cost_matrix)
+	finalSol = initSol(cost_matrix)
+	upperBound = cost(finalSol[1], cost_matrix)
+	q = []
+	sol = (0, [])
+	heapq.heappush(q, sol)
+	while q:
+		sol = heapq.heappop(q)
+		if isSol(sol, n):
+			actCost = cost(sol[1], cost_matrix)
+			if actCost < upperBound:
+				finalSol = sol
+				upperBound = actCost
+		else:
+			lower_bound = lowerBound(sol[1], cost_matrix)
+			if lower_bound < upperBound:
+				childs = complete(sol, n)
+				for child in childs:
+					heapq.heappush(q, child)
+	return finalSol
 
-    for i in range(n):
-        partial_solution = [i] + [-1] * (n-1)
-        csf = get_csf(cost_matrix, partial_solution)
-        gfc = get_gfc(cost_matrix, partial_solution)
-        ffc = get_ffc(cost_matrix, partial_solution)
-        lower_bound = csf + gfc
-        upper_bound = csf + ffc
-
-        if lower_bound > global_upper_bound:
-            continue
-        else:
-            temp_sol = partial_solution.copy()
-            partial_tuple = (lower_bound, temp_sol)
-            heapq.heappush(P, partial_tuple)
-            if upper_bound < global_upper_bound:
-                global_upper_bound = upper_bound
-
-    while P:
-        partial_solution = heapq.heappop(P)[1]
-        free_row = [i for i in range(n) if i not in partial_solution]
-        free_col = [i for i in range(n) if i not in partial_solution]
-
-        for i in free_row:
-            for j in free_col:
-                new_solution = partial_solution.copy()
-                new_solution[j] = i
-                csf = get_csf(cost_matrix, new_solution)
-                gfc = get_gfc(cost_matrix, new_solution)
-                ffc = get_ffc(cost_matrix, new_solution)
-                lower_bound = csf + gfc
-                upper_bound = csf + ffc
-
-                if lower_bound > global_upper_bound:
-                    continue
-                else:
-                    temp_sol = new_solution.copy()
-                    partial_tuple = (lower_bound, temp_sol)
-                    heapq.heappush(P, partial_tuple)
-                    if upper_bound < global_upper_bound:
-                        global_upper_bound = upper_bound
-
-    print('Valor inicial de la cota superior:', global_upper_bound)
-
+'''
+Programa ppal.
+'''
 if __name__ == '__main__':
-    cost_matrix = [
-        [11, 12, 18, 40],
-        [14, 15, 13, 22],
-        [11, 17, 19, 23],
-        [17, 14, 20, 28]
-    ]
-    job_assignment(cost_matrix)
+	cost_matrix = [
+		[11, 12, 18, 40],
+		[14, 15, 13, 22],
+		[11, 17, 19, 23],
+		[17, 14, 20, 28],
+				   ]
+	print(*ByB(cost_matrix))
