@@ -1,37 +1,39 @@
+def es_solucion(x, y, laberinto, visitado, cells_to_visit):
+    return visitado == cells_to_visit-1 and (x, y) == (len(laberinto[0])-1, len(laberinto[1])-1)
 
+def movimiento_factible(x, y, laberinto):
+    return 0 <= x < len(laberinto[0]) and 0 <= y < len(laberinto[1]) and laberinto[x][y] == 0
 
-def esFactible(cell, lab):
-    return 0 <= cell[0] < len(lab) and 0 <= cell[1] < len(lab) and lab[cell[0]][cell[1]] == 0
+def resolver_laberinto(laberinto, cells_to_visit, coords, visitado):
+    x, y = coords
 
-def bt(ab, cell, cells_to_visit, cells_visited):
-    esSol = False
-    if cells_visited == cells_to_visit and cell[0] == len(lab)-1 == cell[1]:
-        esSol = True
+    if es_solucion(x, y, laberinto, visitado, cells_to_visit):
+        return True
     else:
-        desp = [[1, 0], [1, 1], [0, 1], [0, 0]]
-        for d in desp:
-            nextF = cell[0] + d[0]
-            nextC = cell[1] + d[1]
-            if esFactible((nextF, nextC), lab):
-                lab[nextF][nextC] = cells_visited
-                esSol = bt(lab, (nextF, nextC), cells_to_visit, cells_visited + 1)
-                if esSol:
+        movimientos = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        for dx, dy in movimientos:
+            nx, ny = x + dx, y + dy
+            if movimiento_factible(nx, ny, laberinto):
+                visitado += 1
+                laberinto[nx][ny] = visitado
+                if es_solucion(nx, ny, laberinto, cells_to_visit, visitado) or resolver_laberinto(laberinto, cells_to_visit, (nx, ny), visitado):
                     return True
-                lab[nextF][nextC] = 0
-    return esSol
+                else:
+                    laberinto[nx][ny] = 0
+                    visitado -= 1
+        return False
 
-
-
-n = int(input())
-lab = []
+num = int(input())
+laberinto = []
 cells_to_visit = 0
-for _ in range(n):
-    row = list(map(int, input().strip().split()))
-    cells_to_visit += (n + sum(row))    # Cuenta cuantas casillas con valor 0 hay en el lab. sumando las que valen -1 y restándoselas a 'n'
-    lab.append(row)
+for i in range(num):
+    fila = list(map(int, input().strip().split()))
+    cells_to_visit += (num + sum(fila))
+    laberinto.append(fila)
 
-ini, fin = ((0, 0), (n-1, n-1))
-if bt(lab, ini, cells_to_visit, 0):
-    print('SI')
+tiene_solucion = resolver_laberinto(laberinto, cells_to_visit, (0, 0), 0)
+
+if tiene_solucion:
+    print("SI")
 else:
-    print('NO')
+    print("NO")

@@ -1,4 +1,33 @@
+def imprimir(matriz):
+    for j in range(len(matriz)):
+        print(matriz[j], end=' ')
+        if (j + 1) % tam_rej == 0:
+            print()
 
+
+def eliminarElem(jugadoresEliminados, id_jug):
+    eliminados = set(jugadoresEliminados)
+
+    for i in range(len(id_jug)):
+        if id_jug[i] in eliminados:
+            id_jug[i] = 'X'
+        elif id_jug[i] == 'X':
+            continue
+        else:
+            eliminados.add(id_jug[i])
+
+
+tam_rej = int(input())
+id_jug = []
+for i in range(tam_rej):
+    row = list(map(int, input().strip().split()))
+    id_jug.extend(row)
+
+jug_elim = list(map(int, input().strip().split()))
+eliminarElem(jug_elim, id_jug)
+imprimir(id_jug)
+
+'''
 def imprimir(matriz):
     for j in range(len(id_jug)):
         print(id_jug[j], end=' ')
@@ -41,4 +70,4 @@ for i in range(tam_rej):
 
 jug_elim = list(map(int, input().strip().split()))
 eliminarElem(jug_elim, id_jug)
-imprimir(id_jug)
+imprimir(id_jug)'''
