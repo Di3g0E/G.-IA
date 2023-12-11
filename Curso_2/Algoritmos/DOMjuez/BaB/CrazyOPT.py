@@ -42,6 +42,7 @@ def complete(sol, n):
             act_sol.append(i)
             lower_bound = lowerBound(act_sol, cost_matrix)
             partial_tuple = (lower_bound, act_sol)
+            childs.append(partial_tuple)
     return childs
 
 
