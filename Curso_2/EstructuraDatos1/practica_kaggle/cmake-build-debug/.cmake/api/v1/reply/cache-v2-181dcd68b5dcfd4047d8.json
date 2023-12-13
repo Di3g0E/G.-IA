@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/EstructuraDatos1/Practica_arboles_2/cmake-build-debug"
+			"value" : "c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/EstructuraDatos1/practica_kaggle/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/EstructuraDatos1/Practica_arboles_2/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/EstructuraDatos1/practica_kaggle/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/EstructuraDatos1/Practica_arboles_2"
+			"value" : "C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/EstructuraDatos1/practica_kaggle"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/Practica_arboles_2"
+			"value" : "C:/Program Files (x86)/practica_kaggle"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -731,7 +731,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Practica_arboles_2"
+			"value" : "practica_kaggle"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1110,7 +1110,19 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "Practica_arboles_2_BINARY_DIR",
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "linker supports push/pop state"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
+		},
+		{
+			"name" : "practica_kaggle_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1119,10 +1131,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/EstructuraDatos1/Practica_arboles_2/cmake-build-debug"
+			"value" : "C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/EstructuraDatos1/practica_kaggle/cmake-build-debug"
 		},
 		{
-			"name" : "Practica_arboles_2_IS_TOP_LEVEL",
+			"name" : "practica_kaggle_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1134,7 +1146,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "Practica_arboles_2_SOURCE_DIR",
+			"name" : "practica_kaggle_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1143,19 +1155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/EstructuraDatos1/Practica_arboles_2"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
+			"value" : "C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/EstructuraDatos1/practica_kaggle"
 		}
 	],
 	"kind" : "cache",

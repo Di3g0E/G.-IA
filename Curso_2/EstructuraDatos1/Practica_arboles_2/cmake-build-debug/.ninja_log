@@ -1,13 +1,5 @@
 # ninja log v5
 1	164	7228744586393906	CMakeFiles/Practica_arboles_2.dir/tCompeticion.c.obj	261877c25ebd6fbb
-28	186	7228744586616238	CMakeFiles/Practica_arboles_2.dir/main.c.obj	f931b1c1678a5ac6
-12	151	7228744792663371	CMakeFiles/Practica_arboles_2.dir/main.c.obj	f931b1c1678a5ac6
-4	113	7228745054180197	CMakeFiles/Practica_arboles_2.dir/tArbol.c.obj	7e81c9a179074e4f
-114	341	7228745056365104	Practica_arboles_2.exe	65d1301dd0541ce0
-4	124	7228750024197830	CMakeFiles/Practica_arboles_2.dir/tArbol.c.obj	7e81c9a179074e4f
-4	125	7228751390825807	CMakeFiles/Practica_arboles_2.dir/tArbol.c.obj	7e81c9a179074e4f
-15	142	7228751390995588	CMakeFiles/Practica_arboles_2.dir/main.c.obj	f931b1c1678a5ac6
-144	307	7228751392596254	Practica_arboles_2.exe	65d1301dd0541ce0
-5	164	7228752651027408	CMakeFiles/Practica_arboles_2.dir/tArbol.c.obj	7e81c9a179074e4f
-26	179	7228752651191902	CMakeFiles/Practica_arboles_2.dir/main.c.obj	f931b1c1678a5ac6
 179	371	7228752653026858	Practica_arboles_2.exe	65d1301dd0541ce0
+26	179	7228752651191902	CMakeFiles/Practica_arboles_2.dir/main.c.obj	f931b1c1678a5ac6
+5	164	7228752651027408	CMakeFiles/Practica_arboles_2.dir/tArbol.c.obj	7e81c9a179074e4f
