@@ -1,39 +1,38 @@
-import copy
+def es_sol(x, y, lab, p):
+    return lab[x][y] == p
 
+def movimiento_factible(x, y, lab, elem):
+    return 0 <= x < len(lab) and 0 <= y < len(lab[0]) and (lab[x][y] == elem + 1 or lab[x][y] == 0)
 
-def esSol(lab, f, c):
-    return f == len(lab)-1 and c == len(lab)-1
+def resolver_laberinto(lab, cont, coords, elem, p, pos_ant):
+    x, y = coords
 
+    if es_sol(x, y, lab, p):
+        return cont[0]
+    else:
+        movimientos = [(0, 1), (1, 0), (-1, 0), (0, -1)]
+        for fx, fy in movimientos:
+            nx, ny = x + fx, y + fy
+            if movimiento_factible(nx, ny, lab, elem):
+                pos_ant = lab[x][y]
+                if lab[nx][ny] == elem + 1:
+                    elem = lab[nx][ny]
+                cont[0] = cont[0] + 1
+                lab[nx][ny] = cont[0]-1
+                if es_sol(nx, ny, lab, p) or resolver_laberinto(lab, cont, (nx, ny), elem, p, pos_ant):
+                    return cont[0]
+                else:
+                    lab[nx][ny] = pos_ant
+                    if lab[nx][ny] == 0:
+                        elem -= 1
+        return cont[0]
 
-def esMej(lab, mejSol):
-    i = len(lab)-1
-    return lab[i][i] < mejSol[i][i]
-
-
-def esFactible(lab, f, c):
-    return 0 <= f < len(lab) and 0 <= c < len(lab)
-
-def laberintoVA(lab, mejSol, f, c, cont):
-    if not esSol(lab, f, c):
-        if esMej(lab, mejSol):
-            mejSol = copy.deepcopy(lab)
-        else:
-            desp = [[1, 0], [1, 1], [0,1], [0, 0]]
-            for d in desp:
-                newF = f + d[0]
-                newC = c + d[1]
-                if esFactible(lab, newF, newC):
-                    lab[newF][newC] = cont
-                    mejSol = laberintoVA(lab, mejSol, f, c, cont)
-                    lab[newF][newC] = 0
-    return cont
-
-
+# INPUT
 n, m, p = map(int, input().strip().split())
 lab = [0] * m
 
 for i in range(n):
     lab[i] = list(map(int, input().strip().split()))
 
-sol = laberintoVA(lab, [[0] * m for i in range(n)], 0, 0, 0)
+sol = resolver_laberinto(lab, [1], (0, 0), lab[0][0], p, lab[0][0])
 print(sol)
