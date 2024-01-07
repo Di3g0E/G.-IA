@@ -2,7 +2,7 @@
 // Created by Diego on 03/01/2024.
 //
 
-#include "tArbolBin.h"
+#include "tGrafo.h"
 #include <stdio.h>
 #include <stdlib.h>
 
