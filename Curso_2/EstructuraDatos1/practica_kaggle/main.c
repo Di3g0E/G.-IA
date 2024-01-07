@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "tArbol.h"
+#include "tGrafo.h"
 
 int main() {
     tArbol a;

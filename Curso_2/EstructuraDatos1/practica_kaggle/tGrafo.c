@@ -2,7 +2,7 @@
 // Created by Diego on 12/12/2023.
 //
 
-#include "tArbol.h"
+#include "tGrafo.h"
 
 void crearArbolVacio(tArbol * a){
     *a = NULL;
