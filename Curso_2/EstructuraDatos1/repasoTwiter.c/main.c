@@ -1,4 +1,4 @@
-#include "tArbolBin.h"
+#include "tGrafo.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
