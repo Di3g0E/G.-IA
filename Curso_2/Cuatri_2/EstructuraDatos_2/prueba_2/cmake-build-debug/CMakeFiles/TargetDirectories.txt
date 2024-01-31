@@ -1,0 +1,3 @@
+C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/EstructuraDatos_2/prueba_2/cmake-build-debug/CMakeFiles/prueba_2.dir
+C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/EstructuraDatos_2/prueba_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/EstructuraDatos_2/prueba_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
