@@ -2,6 +2,18 @@
 #include "ListaEnlazadaSimple.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    ListaEnlazadaSimple l;
+    l.insertar(3);
+    l.insertar(2);
+    l.insertar(4);
+    l.insertar(3);
+
+    l.imprimir();
+
+    l.mostrarPrimero();
+
+    l.resto();
+
+    l.imprimir();
     return 0;
 }
