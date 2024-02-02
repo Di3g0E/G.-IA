@@ -2,7 +2,7 @@
 #include "ListaEnlazadaSimple.h"
 
 int main() {
-    ListaEnlazadaSimple l;
+    ListaEnlazadaSimple<int> l;
     l.insertar(3);
     l.insertar(2);
     l.insertar(4);

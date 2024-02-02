@@ -7,11 +7,13 @@
 
 #include "Elemento.h"
 
+template <typename T>
 struct Nodo{
-    tElem info;
-    Nodo * sig;
+    T dato;
+    Nodo<T> * sig;
 };
 
+template <typename T>
 class ListaEnlazadaSimple{
 public:
     ~ListaEnlazadaSimple(){
@@ -20,13 +22,13 @@ public:
         }
     }
 
-    void insertar(int x){
-        auto aux = new Nodo{x, l};
+    void insertar(auto x){
+        auto aux = new Nodo<T>{x, l};
         l = aux;
     }
 
     void primero(auto x){
-        x = l->info;
+        x = l->dato;
     }
 
     void resto(){
@@ -38,13 +40,13 @@ public:
     }
 
     void mostrarPrimero(){
-        std::cout<<"El primer elemento de la lista es: "<< l->info << "\n";
+        std::cout<<"El primer elemento de la lista es: "<< l->dato << "\n";
     }
 
     void imprimir(){
         auto aux = l;
         while (aux != nullptr) {
-            std::cout<<aux->info<<' ';
+            std::cout<<aux->dato<<' ';
             aux = aux->sig;
         }
         std::cout<<'\n';
@@ -52,7 +54,7 @@ public:
 
 
 private:
-    Nodo * l = nullptr;
+    Nodo<T> * l = nullptr;
 };
 
 #endif //ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_H
