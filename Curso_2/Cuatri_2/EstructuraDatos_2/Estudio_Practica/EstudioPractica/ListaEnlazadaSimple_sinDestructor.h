@@ -1,31 +1,25 @@
 //
-// Created by Diego on 01/02/2024.
+// Created by Diego on 02/02/2024.
 //
 
-#ifndef ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_H
-#define ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_H
+#ifndef ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_SINDESTRUCTOR_H
+#define ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_SINDESTRUCTOR_H
 
-#include "Elemento.h"
+#include <memory>
 
 template <typename T>
 struct Nodo{
     T dato;
-    Nodo<T> * sig;
+    std::shared_ptr<Nodo<T>> sig;
 };
 
 // Es una pila
 template <typename T>
-class ListaEnlazadaSimple{
+class ListaEnlazadaSimple_sinDestructor{
 public:
-    ~ListaEnlazadaSimple(){
-        if (l){
-            resto();
-        }
-    }
-
     void insertar(T x){
-        auto aux = new Nodo<T>{x, l};
-        l = aux;
+        auto nodo = std::make_shared<Nodo<T>>(x, l);
+        l = nodo;
     }
 
     T primero(){
@@ -37,9 +31,7 @@ public:
 
     void resto(){
         if (l) {
-            auto aux = l;
             l = l->sig;
-            delete aux;
         }
     }
 
@@ -54,7 +46,7 @@ public:
 
 
 private:
-    Nodo<T> * l = nullptr;
+    std::shared_ptr<Nodo<T>> l = nullptr;
 };  // Es una pila
 
-#endif //ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_H
+#endif //ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_SINDESTRUCTOR_H
