@@ -1,25 +1,29 @@
 //
-// Created by Diego on 02/02/2024.
+// Created by Diego on 01/02/2024.
 //
 
-#ifndef ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_SINDESTRUCTOR_H
-#define ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_SINDESTRUCTOR_H
-
-#include <memory>
+#ifndef ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_C_H
+#define ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_C_H
 
 template <typename T>
-struct Nodo{
+struct NodoC{
     T dato;
-    std::shared_ptr<Nodo<T>> sig;
+    NodoC<T> * sig;
 };
 
 // Es una pila
 template <typename T>
-class ListaEnlazadaSimple_sinDestructor{
+class ListaEnlazadaSimple_C{
 public:
+    ~ListaEnlazadaSimple_C(){
+        if (l){
+            resto();
+        }
+    }
+
     void insertar(T x){
-        auto nodo = std::make_shared<Nodo<T>>(x, l);
-        l = nodo;
+        auto aux = new NodoC<T>{x, l};
+        l = aux;
     }
 
     T primero(){
@@ -31,7 +35,9 @@ public:
 
     void resto(){
         if (l) {
+            auto aux = l;
             l = l->sig;
+            delete aux;
         }
     }
 
@@ -46,7 +52,7 @@ public:
 
 
 private:
-    std::shared_ptr<Nodo<T>> l = nullptr;
+    NodoC<T> * l = nullptr;
 };  // Es una pila
 
-#endif //ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_SINDESTRUCTOR_H
+#endif //ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_C_H
