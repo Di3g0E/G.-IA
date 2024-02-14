@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ListaEnlazadaSimple.h"
+#include "EjPropuestosClase.h"
 
 int main() {
     ListaEnlazadaSimple<int> l;
