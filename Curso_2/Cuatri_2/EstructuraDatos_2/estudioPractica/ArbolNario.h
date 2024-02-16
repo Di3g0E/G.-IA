@@ -14,55 +14,39 @@ public:
     template <typename S>
     struct Node {
         S info;
-        std::shared_ptr<Node<S>> parent;
-        std::list<std::shared_ptr<Node<S>>> children;
+        std::shared_ptr<Node<S>> padre;
+        std::list<std::shared_ptr<Node<S>>> hijos;
 
-        bool operator==(Node<T> rhs) {return (info == rhs.info) && (parent == rhs.parent);} // rhs = Right Hand Side; lhs = Left Hand Side
+        bool operator==(Node<S> rhs) {return (info == rhs.info) && (padre == rhs.padre);}
     };
 
     LinkedTree(std::shared_ptr<Node<T>> node) : root(node){};
 
     bool isEmpty() {return root == nullptr;}
 
-    std::shared_ptr<Nodo<T>> getParent(Node<T> node) {return node.parent;}
-    std::shared_ptr<Nodo<T>> getRoot(){return root;}
+    std::shared_ptr<Node<T>> getParent(const Node<T>& node) {return node.padre;}
+    std::shared_ptr<Node<T>> getRoot() {return root;}
+    std::shared_ptr<Node<T>> getChildren(const Node<T>& node) {return node.hijos;}
 
     bool isRoot(Node<T> node) {return node == *root;}
-    bool isLeaf(Node<T> node) {return node.children.size() == 0;}
-    bool isInternal(Node<T> node) {return !isLeaf(node);}
+    bool isLeave(Node<T> node) {return node.hijos.size() == 0;}
+    bool isInternal(Node<T> node) {return !isLeave(node);}
 
-    std::shared_ptr<Node<T>> add(T e, std::shared_ptr<Node<T>> parent = nullptr) {
-        if (parent == nullptr) {
-            root = std::make_shared<Node<T>>(e, nullptr);                                   // root->info = e; root->parent = nullptr; root->children inicializa lista vacía
+    std::shared_ptr<Node<T>> add(T e, std::shared_ptr<Node<T>> padre = nullptr) {
+        if (padre == nullptr){
+            root = std::make_shared<Node<T>>(e, nullptr);
             return root;
         } else {
-            auto child = std::make_shared<Node<T>>(e, parent);
-            parent->children.push_front(child);
+            auto child = std::make_shared<Node<T>>(e, nullptr);
+            padre->hijos.push_front(child);
             return child;
-        } // if (parent == nullptr)
+        }   // if
     }
 
-    std::list<std::shared_ptr<Nodo<T>>> getChildren(Nodo<T> node) {return node.children;}
 
-    LinkedTree<T> cut(std::shared_ptr<Node<T>> node) {
-        auto parent = getParent(node);
-        if (parent == nullptr) {
-            auto t = *this;                                                                 // Copia del puntero de la propia variable
-            root = nullptr;
-            return t;
-        } else {
-            parent->children.remove(node);
-            LinkedTree t{node};
-            return t;
-        }   // if (parent == nullpt
-    }
-
-    LinkedTree<T> atach(Node<T> parent, std::shared_ptr<Node<T>> node) {
-
-    }
 
 private:
-    std::shared_ptr<Node<T>> root = nullptr;
+    std::shared_ptr<Node<T>> root;
 };
 
 #endif //ESTUDIOPRACTICA_ARBOLNARIO_H
