@@ -70,4 +70,88 @@ private:
     std::shared_ptr<Node<T>> root = nullptr;
 };
 
+template <typename T>
+class LCRSTree {
+public:
+
+    template <typename S>
+    struct Nodo {
+        S info;
+        std::shared_ptr<Nodo<S>> parent = nullptr;
+        std::shared_ptr<Nodo<S>> leftChild = nullptr;
+        std::shared_ptr<Nodo<S>> rightSibling = nullptr;
+    };
+
+    template <typename S>
+    class SiblingsIterator {
+    public:
+        SiblingsIterator(std::shared_ptr<Nodo<S>> node) : it(node) {};
+
+        SiblingsIterator& operator++() {
+            it = it->rightSibling;
+            if (it != nullptr) {
+                it = it->rightSibling;
+                return it;
+            }
+        }   // ++i;
+        
+        SiblingsIrerator& operator++(int) {
+            auto tmp = it;
+            operator++();
+            return tmp;
+        }   // i++;
+
+        S operator*() {
+            return it;
+        }
+
+        bool operator==(const S& rhs) {
+            return it == rhs;
+        }
+
+    private:
+        S it;
+    };
+
+    template <typename S>
+    class Iterable {
+    public:
+        SiblingsIterator<S> begin() {return b;}
+        SiblingsIterator<S> end() {return e;}
+
+    private:
+        SiblingsIterator<S> b;
+        SiblingsIterator<S> e;
+    };
+
+    bool isLeaf(Nodo<T> node) {return node.leftChild == nullptr;}
+    bool isInternal(Nodo<T> node) {return !isLeaf(node);}
+
+    std::shared_ptr<Nodo<T>> add(T e, std::shared_ptr<Nodo<T>> parent = nullptr) {
+        if ((parent == nullptr) && (root != nullptr)) {
+            // std::cout<<ERROR;
+        } else if (parent == nullptr) {
+            root = std::make_shared<Nodo<T>>(e, nullptr, nullptr, nullptr);
+        } else {
+            auto aux = std::make_shared<Nodo<T>>(e, parent, nullptr, nullptr);
+            if (parent->leftChild == nullptr) {
+                parent->leftChild = aux;
+            } else {
+                aux->rightSibling = parent->leftChild;
+                parent->leftChild = aux;
+            }   // if parent no child
+            return aux;
+        }   // if no root
+    }
+
+    Iterable<T> children(Nodo<T> node) {
+        return Iterable{node.leftchild, nullptr};
+    }
+
+    LCRSTree<Nodo<T>> cut(Nodo<T> e, std::shared_ptr<Nodo<T>> node) {}
+
+private:
+    std::shared_ptr<Nodo<T>> root;
+};
+
 #endif //ESTUDIOPRACTICA_ARBOLNARIO_H
