@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ListaEnlazadaSimple.h"
 #include "EjPropuestosClase.h"
-#include "ArbolNario.h"
+#include "LinkedTree.h"
 
 int main() {
     ListaEnlazadaSimple<int> l;

@@ -1,11 +1,16 @@
+//
+// Created by Diego on 22/02/2024.
+//
+
+#ifndef PRACTICA_EVALUACIONEXPRESIONES_PR_EVALUACIONEXPRESIONES_H
+#define PRACTICA_EVALUACIONEXPRESIONES_PR_EVALUACIONEXPRESIONES_H
+
 #include <iostream>
 #include <string>
 #include <stack>
-#include <forward_list>
 #include <cmath>
-#include "Pr_EvaluacionExpresiones.h"
+#include <forward_list>
 
-/*
 using namespace std;
 
 auto input(){
@@ -111,17 +116,5 @@ auto solucion(const auto& exp){
 
     return l.front();
 }
-*/
 
-int main() {
-
-    string expresion = input();
-
-    auto postfija = infijaAPostfija(expresion);
-    cout<<"\nExpreision postfija: "<<postfija<<'\n';
-
-    int sol = solucion(postfija);
-    cout<<"Solucion: "<<sol;
-
-    return 0;
-}
+#endif //PRACTICA_EVALUACIONEXPRESIONES_PR_EVALUACIONEXPRESIONES_H

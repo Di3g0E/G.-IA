@@ -24,14 +24,14 @@ public:
 
     bool isEmpty() {return root == nullptr;}
 
-    std::shared_ptr<Nodo<T>> getParent(Node<T> node) {return node.parent;}
-    std::shared_ptr<Nodo<T>> getRoot(){return root;}
+    std::shared_ptr<Node<T>> getParent(Node<T> node) {return node.parent;}
+    std::shared_ptr<Node<T>> getRoot(){return root;}
 
     bool isRoot(Node<T> node) {return node == *root;}
     bool isLeaf(Node<T> node) {return node.children.size() == 0;}
     bool isInternal(Node<T> node) {return !isLeaf(node);}
 
-    std::shared_ptr<Node<T>> add(T e, std::shared_ptr<Node<T>> parent = nullptr) {
+    std::shared_ptr<Node<T>> add(T e, std::shared_ptr<Node<T>> parent = nullptr) {          // add function
         if (parent == nullptr) {
             root = std::make_shared<Node<T>>(e, nullptr);                                   // root->info = e; root->parent = nullptr; root->children inicializa lista vacía
             return root;
@@ -42,9 +42,9 @@ public:
         } // if (parent == nullptr)
     }
 
-    std::list<std::shared_ptr<Nodo<T>>> getChildren(Nodo<T> node) {return node.children;}
+    std::list<std::shared_ptr<Node<T>>> getChildren(Node<T> node) {return node.children;}   // getChildren function
 
-    LinkedTree<T> cut(std::shared_ptr<Node<T>> node) {
+    LinkedTree<T> cut(std::shared_ptr<Node<T>> node) {                                      // cut function
         auto parent = getParent(node);
         if (parent == nullptr) {
             auto t = *this;                                                                 // Copia del puntero de la propia variable
@@ -57,14 +57,14 @@ public:
         }   // if (parent == nullpt
     }
 
-    LinkedTree<T> atach(Node<T> parent, std::shared_ptr<Node<T>> node) {
+    LinkedTree<T> atach(Node<T> parent, std::shared_ptr<Node<T>> node) {                    // atach function
         parent.children.push_front(node);
         node->parent = parent;
     }
 
     // Ejercicios propuestos
     bool EsPadreNoAbuelo(Node<T> *nodo) {return nodo->children.size() >= 1 && nodo->children.children.size() == 0;}
-    bool EsTioSinHijos(Nodo<T> *nodo) {return nodo->parent.children.size() >= 1 && nodo->children.size() == 0;}
+    bool EsTioSinHijos(Node<T> *nodo) {return nodo->parent.children.size() >= 1 && nodo->children.size() == 0;}
 
 private:
     std::shared_ptr<Node<T>> root = nullptr;
@@ -95,7 +95,7 @@ public:
             }
         }   // ++i;
         
-        SiblingsIrerator& operator++(int) {
+        SiblingsIterator& operator++(int) {
             auto tmp = it;
             operator++();
             return tmp;

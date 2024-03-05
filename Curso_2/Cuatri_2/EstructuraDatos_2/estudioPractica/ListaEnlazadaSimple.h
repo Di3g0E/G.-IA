@@ -8,41 +8,45 @@
 #include <memory>
 
 template <typename T>
-struct Nodo{
-    T dato;
-    std::shared_ptr<Nodo<T>> sig;
-};
-
-template <typename T>
 class ListaEnlazadaSimple{
 public:
-    void insertar(T x){
-        auto nodo = std::make_shared<Nodo<T>>(x, l);
+    template <typename S>
+    class Node {
+        friend class ListaEnlazadaSimple;
+        S info;
+        std::shared_ptr<Node<S>> sig;
+    };
+
+    void insertar(T e) {
+        auto nodo = std::make_shared<Node<T>>();
+        nodo->info = e;
+        nodo->sig = l;
         l = nodo;
     }
 
-    T primero(){
-        if (l){
-            return l->dato;
+    void resto() {
+        l = l->sig;
+    }
+
+    T primero() {
+        if (l) {
+            return l->info;
         }
         return T{};
     }
 
-    void resto(){
-        l = l->sig;
-    }
-
-    void imprimir(){
-        auto aux = l;
-        while (aux != nullptr){
-            std::cout<<aux->dato<<' ';
-            aux = aux->sig;
-        }
-        std::cout<<'\n';
+    void imprimir() {
+        if (l) {
+            auto aux = l;
+            while (aux != nullptr) {
+                std::cout<<aux->info<<' ';
+                aux = aux->sig;
+            }
+        } else { std::cout << "La lista esta vacia.\n"; }
     }
 
 private:
-    std::shared_ptr<Nodo<T>> l;
+    std::shared_ptr<Node<T>> l;
 };
 
 #endif //ESTUDIOPRACTICA_LISTAENLAZADASIMPLE_H
