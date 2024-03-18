@@ -2,8 +2,11 @@
 #include "ListaEnlazadaSimple.h"
 #include "EjPropuestosClase.h"
 #include "LinkedTree.h"
+#include "Tablas_Hash.h"
+#include "ArbolBinarioBusqueda.h"
 
 int main() {
+    /*
     ListaEnlazadaSimple<int> l;
     l.insertar(3);
     l.insertar(2);
@@ -32,8 +35,31 @@ int main() {
     q.resto();
 
     q.imprimir();
+*/
 
+    /*
+     * Myclass<std::string> c;
+    Printer p;
 
+    c[3] = "tres";
+    c[42] = "cuarenta y dos";
+
+    std::cout<<"c[3] = "<<c[3]<<'\n';
+
+    p.print("cuarenta y dos", 42);
+     */
+
+    HashMapEs<int, int> mymap;
+
+    mymap[3] = 42;
+
+    if (mymap.contains(37)){
+        std::cout<<"Yes"<<'\n';
+    }else std::cout<<"No"<<'\n';
+
+    if (mymap.contains(3)){
+        std::cout<<"Yes"<<'\n';
+    }else std::cout<<"No"<<'\n';
 
     return 0;
 }
