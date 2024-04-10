@@ -1,0 +1,11 @@
+Python sockets:
+https://docs.python.org/es/3/howto/sockets.html
+
+Ejemplo:
+https://espaciotecnologico.co/programar-cliente-y-servidor-en-python-con-socket/
+
+Tutorial:
+https://jarroba.com/nuestro-propio-servidor-software-socket-con-python/
+
+Python Guide:
+https://realpython.com/

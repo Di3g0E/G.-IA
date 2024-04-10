@@ -1,0 +1,153 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{tcolorbox}
+\usepackage[left=2cm,right=2cm,top=3.5cm,bottom=3.5cm]{geometry}
+
+% Configuración de resaltado de sintaxis para código
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Guía Práctica de Configuración de Servidor Linux}
+\author{Tú Nombre}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+En esta guía, se detallan los pasos para configurar un servidor Linux desde cero, asegurarlo y mantenerlo operativo con una API-Rest en Python.
+
+\subsection{Objetivos de la Práctica}
+\begin{itemize}
+  \item Configurar un servidor Linux accesible.
+  \item Securizar el servidor y programar un script de mantenimiento.
+  \item Instalar y mantener una API-Rest en Python.
+\end{itemize}
+
+\section{Paso a Paso}
+\subsection{1. Administración Básica del Servidor}
+Para comenzar, es necesario crear una instancia de EC2 en AWS (Amazon Elastic Compute Cloud) y conectarse a ella utilizando SSH.
+
+\subsubsection{Conexión SSH}
+Los siguientes pasos detallan cómo conectarse a la instancia mediante SSH desde Visual Studio Code:
+
+\begin{enumerate}
+  \item Conectar a la máquina virtual desde Visual Studio Code.
+  \item Moverse a la carpeta de la clave de acceso al servidor.
+  \item Ejecutar el comando: \texttt{chmod 400 "Nombre\_de\_la\_clave.pem"} en la terminal.
+  \item Conectar mediante SSH usando: \\
+  \texttt{ssh -i "Llave-Mi\_servidor\_web.pem" ubuntu@ec2-13-53-136-17.eu-north-1.compute.amazonaws.com}
+\end{enumerate}
+
+\subsection{2. Puesta en Marcha del Servidor Linux Accesible}
+Para asegurar un servidor seguro, se deben elegir una imagen de sistema operativo Linux compatible al crear la instancia EC2 y configurar reglas de seguridad en el grupo de seguridad correspondiente.
+
+\subsubsection{Cerrar Puertos de Entrada y Salida en Desuso}
+Para ello, identifica el ID del Grupo de Seguridad y revoca el acceso a todos los puertos excepto el 22.
+
+\begin{quote}
+\texttt{curl -s http://169.254.169.254/latest/meta-data/security-groups/} \\
+\texttt{aws ec2 revoke-security-group-ingress --group-id tu-id-de-grupo --protocol all --cidr 0.0.0.0/0}
+\end{quote}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.7\linewidth]{Puertos_de_entrada_1.png}
+  \caption{Configuración de Puertos de Entrada}
+\end{figure}
+
+\subsection{3. Securización y Programación de Script de Mantenimiento}
+Se detallan los pasos para implementar Fail2ban, un sistema de prevención de intrusiones, y se muestra un script de mantenimiento para respaldar y limpiar archivos antiguos.
+
+\subsubsection{Pasos para Implementar Fail2ban}
+\begin{enumerate}
+  \item Descargar e instalar Python (versión mayor o igual a 3.5).
+  \item Actualizar el sistema y instalar Python y Pip.
+  \item Instalar Fail2ban y configurarlo según los requisitos.
+\end{enumerate}
+
+\subsubsection{Script de Mantenimiento}
+Se presenta un script Bash para realizar respaldos y limpiar archivos antiguos automáticamente.
+
+\begin{lstlisting}[language=bash, caption=Script de Mantenimiento]
+#!/bin/bash
+
+directorios_respaldar="/etc /var/lib /home/*"
+directorio_backup="/home/directorio_backup"
+
+fecha=$(date +"%Y-%m-%d")
+tar_file="$directorio_backup/backup_$fecha.tar.gz"
+tar -czvf "$tar_file" $directorios_respaldar
+
+find /ruta/a/logs -type f -name "*.log" -mtime +7 -exec rm {} \;
+
+echo "Copia de seguridad realizada en $tar_file"
+echo "Archivos de log más antiguos de 7 días eliminados."
+\end{lstlisting}
+
+\subsubsection{Automatización del Script}
+Se muestra cómo automatizar la ejecución del script utilizando cron.
+
+\begin{verbatim}
+0 3 * * * /home/scripts/script_backup.sh > /home/directorio_backup/log_backup.log 2>&1
+\end{verbatim}
+
+\subsection{4. Servicios}
+Se finaliza mostrando cómo crear una API básica con Bottle en Python para ofrecer servicios en el servidor.
+
+\subsubsection{Crear la API Mínima con Bottle}
+\begin{enumerate}
+  \item Instalar el paquete Bottle.
+  \item Implementar la lógica de los recursos requeridos en un archivo Python.
+\end{enumerate}
+
+\begin{lstlisting}[language=Python, caption=API Básica con Bottle]
+from bottle import Bottle, run
+import datetime
+
+app = Bottle()
+
+@app.route('/hi')
+def hello():
+    now = datetime.datetime.now()
+    return f'Hola, hoy es {now.strftime("%d/%m/%Y")} y son las {now.strftime("%H:%M:%S")}'
+
+@app.route('/status')
+def status():
+    # Implementar lógica para listar servicios en ejecución
+    return "Servicios en ejecución: Servicio1, Servicio2, ..."
+
+if __name__ == '__main__':
+    run(app, host='0.0.0.0', port=8080)
+\end{lstlisting}
+
+\end{document}
