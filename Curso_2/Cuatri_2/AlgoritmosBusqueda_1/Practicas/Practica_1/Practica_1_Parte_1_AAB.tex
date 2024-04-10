@@ -1,0 +1,481 @@
+\documentclass{article}
+\usepackage{listings} % Para resaltar la sintaxis del código
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% Personalizar la portada
+\title{Título del Trabajo}
+\author{Tú Nombre}
+\date{\today}
+
+
+
+% Continuar con el contenido del documento
+\begin{document}
+
+\maketitle
+
+% Opcional: Incluir una página en blanco después de la portada
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+% Iniciar numeración de páginas después de la portada
+\setcounter{page}{1}
+
+% Resto del contenido del documento
+\section{Introducción}
+A lo largo de este cuaderno podrá encontrar:
+\begin{itemize}
+    \item En primer lugar, una función que le permitirá introducir la configuración inicial y final que desee. Más allá del propio juego podrá poner como final e inicial cualquiera sin necesidad de estar en formato de torre, aunque recuerde que en ningún caso un disco mayor estará sobre uno de menor tamaño.
+    \item Después, encontrará desglosado en apartados los requerimientos de la propia práctica, así como los algoritmos por separado en su respectivo orden.
+\end{itemize}
+
+
+\subsubsection*{Clase:}
+
+\begin{lstlisting}[language=Python]
+# Librerías
+import time
+from collections import deque
+import copy
+from queue import PriorityQueue
+
+# Clase para el problema
+class Hanoi:
+    def __init__(self, e_i, e_f, esp):
+        self.e_ini = e_i
+        self.e_fin = e_f
+        self.espacio_estados = esp
+
+    def __es_final(self, estado):
+        return self.e_fin == estado
+
+    def __expandir_amplitud(self, estado):
+        sucesores = deque()
+        for origen in range(3):
+            for destino in range(3):
+                if origen != destino and estado[origen] and (
+                        not estado[destino] or estado[destino][-1] > estado[origen][-1]):
+                    nuevo = copy.deepcopy(estado)
+                    nuevo[destino].append(nuevo[origen].pop())
+                    sucesores.append(nuevo)
+
+        return sucesores
+
+    def __expandir_dfs(self, estado):
+        vecinos = []
+        for origen in range(3):
+            for destino in range(3):
+                if origen != destino and estado[origen] and (
+                        not estado[destino] or estado[destino][-1] > estado[origen][-1]):
+                    nuevo = copy.deepcopy(estado)
+                    nuevo[destino].append(nuevo[origen].pop())
+                    vecinos.append(nuevo)
+        return vecinos
+
+    def __expandir_heuristica(self, estado):
+        sucesores = []
+        for i in range(3):
+            for j in range(3):
+                if i != j and (estado[i] and (not estado[j] or estado[i][-1] < estado[j][-1])):
+                    nuevo_estado = [list(torre) for torre in estado]
+                    if nuevo_estado[i]:  # Verificar si la lista no está vacía antes de llamar a pop()
+                        nuevo_estado[j].append(nuevo_estado[i].pop())
+                        sucesores.append((nuevo_estado, self.__calcular_distancia_hamming(nuevo_estado)))
+        return sucesores
+
+    def __calcular_distancia_hamming(self, estado):
+        distancia_hamming = 0
+        for torre_actual, torre_objetivo in zip(estado, self.e_fin):
+            for disco_actual, disco_objetivo in zip(torre_actual, torre_objetivo):
+                if disco_actual != disco_objetivo:
+                    distancia_hamming += 1
+        return distancia_hamming
+
+    def bfs(self):
+        t_ini = time.time()
+        visitados = []
+        q = deque([self.e_ini])
+
+        while q and len(visitados) <= self.espacio_estados:
+            actual = q.popleft()
+            if actual not in visitados:
+                visitados.append(actual)
+                if self.__es_final(actual):
+                    t_fin = time.time()
+                    return visitados, t_fin-t_ini
+                q.extend(vecino for vecino in self.__expandir_amplitud(actual) if (vecino not in visitados))
+
+        return [], 0
+
+    def dfs(self):
+        t_ini = time.time()
+        visitados = []
+
+        stack = [self.e_ini]
+
+        while stack and len(visitados) <= self.espacio_estados:
+            actual = stack.pop()
+            if actual not in visitados:
+                visitados.append(actual)
+                if actual == self.e_fin:
+                    t_fin = time.time()
+                    return visitados, t_fin - t_ini
+                vecinos = self.__expandir_dfs(actual)
+                stack.extend(vecino for vecino in reversed(vecinos) if vecino not in visitados)
+
+        return [], 0
+
+    def heuristica_estatica(self):
+        t_ini = time.time()
+        frontera = PriorityQueue()
+        frontera.put((0, self.e_ini))
+        padres = {tuple(map(tuple, self.e_ini)): None}
+        costo_camino = {tuple(map(tuple, self.e_ini)): 0}
+        cont = 1
+
+        while not frontera.empty():
+            _, estado_actual = frontera.get()
+
+            if self.__es_final(estado_actual):
+                camino = []
+                while estado_actual:
+                    camino.append(estado_actual)
+                    estado_actual = padres[tuple(map(tuple, estado_actual))]
+                t_fin = time.time()
+                return camino[::-1], t_fin-t_ini
+
+            for sucesor, distancia in self.__expandir_heuristica(estado_actual):
+                nuevo_costo = costo_camino[tuple(map(tuple, estado_actual))] + 1
+                if tuple(map(tuple, sucesor)) not in costo_camino or nuevo_costo < costo_camino[tuple(map(tuple, sucesor))]:
+                    costo_camino[tuple(map(tuple, sucesor))] = nuevo_costo
+                    prioridad = nuevo_costo + distancia
+                    frontera.put((prioridad, sucesor))
+                    padres[tuple(map(tuple, sucesor))] = estado_actual
+        return [], 0
+
+
+def pedir_valores():
+    ini = [[], [], []]
+    fin = [[], [], []]
+    num_discos = int(input("Introduzca el número de discos: "))
+    if num_discos > 0:
+        print("\nAhora, establezca el ESTADO INICIAL s_0:")
+
+        for disco in reversed(range(1, num_discos+1)):
+            torre = int(input(f"Introduce la torre (0, 1 o 2) en la que quieres apilar el disco {disco}: "))
+
+            while torre != 0 and torre != 1 and torre != 2:
+                torre = int(input(f"Por favor, introduce 0, 1 o 2 para introducir el disco {disco} en dicha torre: "))
+
+            ini[torre].append(disco)
+
+        print("\nAhora, establezca el ESTADO META s_f:")
+
+        for disco in reversed(range(1, num_discos+1)):
+            torre = int(input(f"Introduce la torre (0, 1 o 2) en la que quieres apilar el disco {disco}: "))
+
+            while torre != 0 and torre != 1 and torre != 2:
+                torre = int(input(f"Por favor, introduce 0, 1 o 2 para introducir el disco {disco} en dicha torre: "))
+
+            fin[torre].append(disco)
+
+        esp = int(input("\nAhora, introduce el tamaño máximo que podrá tener el espacio de estados: "))
+
+    else:
+        print("El número de discos debe ser mayor que 0.")
+        return None, None, 0
+
+    return ini, fin, esp
+\end{lstlisting}
+
+\subsubsection*{Playground:}
+
+\begin{lstlisting}[language=Python]
+# Código principal
+e_ini, e_fin, esp = pedir_valores()
+hanoi = Hanoi(e_i=e_ini, e_f=e_fin, esp=esp)
+if e_ini and e_fin:
+    sol_bfs, time_bfs = hanoi.bfs()
+    sol_dfs, time_dfs = hanoi.dfs()
+    sol_star, time_star = hanoi.heuristica_estatica()
+
+    print('\n')
+    print("Algoritmo de Búsqueda en Amplitud:")
+    if sol_bfs:
+        for idx_bfs, paso_bfs in enumerate(sol_bfs):
+            print(f"Paso {idx_bfs+1}: {paso_bfs}")
+        print(f"TIEMPO DE EJECUCIÓN: {time_bfs}")
+    else:
+        print("No se ha encontrado una solución con el tamaño máximo asignado al conjunto de estados")
+
+    print('\n')
+    print("Algoritmo de Búsqueda en Profundidad:")
+    if sol_dfs:
+        for idx, paso_dfs in enumerate(sol_dfs):
+            print(f"Paso {idx+1}: {paso_dfs}")
+        print(f"TIEMPO DE EJECUCIÓN: {time_dfs}")
+    else:
+        print("No se ha encontrado una solución con el tamaño máximo asignado al conjunto de estados")
+
+    print('\n')
+    print("Algoritmo de Búsqueda A*:")
+    if sol_star and (len(sol_star) <= esp):
+        for idx_star, paso_star in enumerate(sol_star):
+            print(f"Paso {idx_star+1}: {paso_star}")
+        print(f"TIEMPO DE EJECUCIÓN: {time_star}")
+    else:
+        print("No se ha encontrado una solución con el tamaño máximo asignado al conjunto de estados")
+\end{lstlisting}
+
+
+
+\section{Desarrollo}
+En esta sección puedes desarrollar los puntos principales de tu trabajo.
+
+\subsection*{a) Descripción del problema como una búsqueda en un espacio de estados}
+\begin{itemize}
+    \item \textbf{Estado inicial $s_0$:} El estado inicial es elegido por el usuario, aunque típicamente es aquel en el que todos los discos ($D_1, \: D_2 \: , ..., \: D_n$) se encuentran apilados de mayor a menor tamaño en la aguja *A*.
+    
+    \item \textbf{Estado meta $s_f$:} El estado meta es aquel en el que todos los discos están apilados en el orden de tamaños (de abajo a arriba) en la aguja *B* o la aguja *C*: $n, \: n-1, \: ..., \: 1$.
+    
+    \item \textbf{Operadores:} Mover un disco de una aguja a otra.
+    
+    \item \textbf{Restricciones:}
+    \begin{itemize}
+        \item Un disco nunca puede reposar encima de otro de menor tamaño (es decir, los discos siempre estarán colocados de la forma $(D_1, \: D_2, \: ..., \: D_n)$).
+        \item Cuando se proceda a mover un disco de una aguja a otra, solo se podrán mover aquellos que se encuentren en la cima de la aguja (es decir, cada aguja corresponde a una estructura LIFO).
+    \end{itemize}
+\end{itemize}
+
+\subsection*{b) Descripción de los operadores que se pueden aplicar para la función expandir(nodos)}
+\textbf{Descripción}:
+\begin{enumerate}
+    \item Seleccionar una torre de origen (de las tres torres disponibles: A, B, C).
+    \item Seleccionar una torre de destino (distinta de la torre de origen y que cumpla con las reglas del juego, es decir, el disco a mover debe ser más pequeño que el disco en la cima de la torre de destino).
+    \item Verificar que la torre de origen no esté vacía y que la torre de destino acepte el disco a mover según las reglas del juego.
+    \item Extraer el disco superior de la torre de origen.
+    \item Colocar el disco extraído en la cima de la torre de destino.
+    \item Generar una nueva configuración del juego después de aplicar este movimiento.
+    \item Agregar la nueva configuración a la lista de nodos expandidos.
+\end{enumerate}
+
+\subsection*{c) Descripción del conjunto de los estados posibles}
+El conjunto de estado se define por la disposición de los discos en las tres agujas (A, B y C). Se puede describir de la siguiente manera:
+\begin{itemize}
+    \item \textbf{Estado inicial:} Todos los discos están apilados en orden decreciente de tamaño en la aguja A, mientras que las agujas B y C están vacías.
+    \item \textbf{Estados intermedios:} Durante el proceso de mover los discos de una aguja a otra, se generan múltiples estados intermedios donde los discos se encuentran distribuidos entre las tres agujas, manteniendo siempre la condición de que ningún disco más grande esté sobre uno más pequeño.
+    \item \textbf{Estado final:} El estado final se alcanza cuando todos los discos han sido transferidos a la aguja B o C, manteniendo el orden decreciente de tamaño en cada una de ellas.
+    \item \textbf{Estados inválidos:} Cualquier estado donde un disco más grande esté sobre uno más pequeño sería un estado inválido.
+\end{itemize}
+
+\subsection*{d) Algoritmo de Búsqueda en amplitud}
+
+\begin{tcolorbox}
+\begin{lstlisting}[language=Python]
+def expandir_bfs(estado):
+    vecinos = deque()
+    for origen in range(3):
+        for destino in range(3):
+            if origen != destino and estado[origen] and (
+                    not estado[destino] or estado[destino][-1] > estado[origen][-1]):
+                nuevo = copy.deepcopy(estado)
+                nuevo[destino].append(nuevo[origen].pop())
+                vecinos.append(nuevo)
+    return vecinos
+
+def hanoi_bfs(e_ini, e_fin):
+    t_ini = time.time()
+    visitados = []
+    q = deque([e_ini])
+
+    while q:
+        actual = q.popleft()
+        if actual not in visitados:
+            visitados.append(actual)
+            if actual == e_fin:
+                t_fin = time.time()
+                return visitados, t_fin-t_ini
+            q.extend(vecino for vecino in expandir_bfs(actual) if (vecino not in visitados))
+
+    return [], 0
+
+configs_ini = []
+configs_fin = []
+
+# Configuraciones inicial y objetivo
+configuracion_inicial = [[3, 2, 1], [], []]
+configuracion_objetivo = [[], [], [3, 2, 1]]
+
+path, t = hanoi_bfs(e_ini=configuracion_inicial, e_fin=configuracion_objetivo)
+
+if path:
+    for idx, item in enumerate(path):
+        print(f"Paso {idx+1}: {item}")
+    print(f"\nTIEMPO: {t}")
+\end{lstlisting}
+\end{tcolorbox}
+
+
+\subsection*{e) Algoritmo de Búsqueda en Profundidad}
+
+\begin{tcolorbox}
+\begin{lstlisting}[language=Python]
+def expandir_dfs(estado):
+    vecinos = []
+    for origen in range(3):
+        for destino in range(3):
+            if origen != destino and estado[origen] and (
+                    not estado[destino] or estado[destino][-1] > estado[origen][-1]):
+                nuevo = copy.deepcopy(estado)
+                nuevo[destino].append(nuevo[origen].pop())
+                vecinos.append(nuevo)
+    return vecinos
+
+def hanoi_dfs(e_ini, e_fin):
+    t_ini = time.time()
+    visitados = []
+
+    stack = [e_ini]
+
+    while stack:
+        actual = stack.pop()
+        if actual not in visitados:
+            visitados.append(actual)
+            if actual == e_fin:
+                t_fin = time.time()
+                return visitados, t_fin - t_ini
+            vecinos = expandir_dfs(actual)
+            stack.extend(vecino for vecino in reversed(vecinos) if vecino not in visitados)
+
+    return [], 0
+
+configs_ini = []
+configs_fin = []
+
+# Configuraciones inicial y objetivo
+configuracion_inicial = [[3, 2, 1], [], []]
+configuracion_objetivo = [[], [], [3, 2, 1]]
+
+path, t = hanoi_dfs(e_ini=configuracion_inicial, e_fin=configuracion_objetivo)
+
+if path:
+    for idx, item in enumerate(path):
+        print(f"Paso {idx+1}: {item}")
+    print(f"\nTIEMPO: {t}")
+\end{lstlisting}
+\end{tcolorbox}
+
+
+\subsection*{f) Proponer y describir una heurística}
+\textbf{Distancia de Hamming}: contar los discos que se encuentran en diferentes posiciones entre la configuración inicial y la final e incrementar en uno el coste por cada disco que se encuentre en una posición diferente entre ambas configuraciones.
+
+\textbf{Descripción}:
+\begin{enumerate}
+    \item Calcular la distancia de Hamming entre la configuración actual y la configuración final del problema.
+    \item Cuantos más discos estén en diferentes posiciones, mayor será la distancia de Hamming y mayor será la estimación de la cantidad de movimientos necesarios.
+    \item La heurística elegirá la configuración de expansión que minimice la distancia de Hamming, es decir, que más se acerque a la configuración objetivo.
+\end{enumerate}
+
+\subsection*{g) Programa en Python de la búsqueda de la solución usando el algoritmo de A* con la heurística propuesta}
+
+\begin{lstlisting}[language=Python]
+def calcular_distancia_hamming(configuracion_actual, configuracion_objetivo):
+    distancia_hamming = 0
+    for torre_actual, torre_objetivo in zip(configuracion_actual, configuracion_objetivo):
+        for disco_actual, disco_objetivo in zip(torre_actual, torre_objetivo):
+            if disco_actual != disco_objetivo:
+                distancia_hamming += 1
+    return distancia_hamming
+
+def esFinal(configuracion, configuracion_objetivo):
+    return configuracion == configuracion_objetivo
+
+def expandir(configuracion, configuracion_objetivo):
+    sucesores = []
+    for i in range(3):
+        for j in range(3):
+            if i != j and (configuracion[i] and (not configuracion[j] or configuracion[i][-1] < configuracion[j][-1])):
+                nuevo_estado = [list(torre) for torre in configuracion]
+                if nuevo_estado[i]:
+                    nuevo_estado[j].append(nuevo_estado[i].pop())
+                    sucesores.append((nuevo_estado, calcular_distancia_hamming(nuevo_estado, configuracion_objetivo)))
+    return sucesores
+
+def heuristicaEstatica(configuracion_inicial, configuracion_objetivo):
+    t_ini = time.time()
+    frontera = PriorityQueue()
+    frontera.put((0, configuracion_inicial))
+    padres = {tuple(map(tuple, configuracion_inicial)): None}
+    costo_camino = {tuple(map(tuple, configuracion_inicial)): 0}
+    contador = 0
+
+    while not frontera.empty():
+        _, estado_actual = frontera.get()
+
+        if esFinal(estado_actual, configuracion_objetivo):
+            camino = []
+            while estado_actual:
+                camino.append(estado_actual)
+                estado_actual = padres[tuple(map(tuple, estado_actual))]
+                t_fin = time.time()
+            return camino[::-1], t_fin-t_ini
+
+        for sucesor, distancia in expandir(estado_actual, configuracion_objetivo):
+            nuevo_costo = costo_camino[tuple(map(tuple, estado_actual))] + 1
+            if tuple(map(tuple, sucesor)) not in costo_camino or nuevo_costo < costo_camino[tuple(map(tuple, sucesor))]:
+                costo_camino[tuple(map(tuple, sucesor))] = nuevo_costo
+                prioridad = nuevo_costo + distancia
+                frontera.put((prioridad, sucesor))
+                padres[tuple(map(tuple, sucesor))] = estado_actual
+\end{lstlisting}
+
+
+
+
+
+\section{Conclusiones}
+Puedes escribir tus conclusiones aquí.
+
+\section{Referencias}
+Aquí van las referencias bibliográficas utilizadas en tu trabajo.
+
+\section{Imágenes}
+A continuación se muestra un ejemplo de cómo insertar una imagen en tu documento.
+
+\begin{figure}[h]
+\centering
+% \includegraphics[width=0.5\textwidth]{ejemplo_imagen.png}
+\caption{Descripción de la imagen.}
+\label{fig:ejemplo}
+\end{figure}
+
+\end{document}

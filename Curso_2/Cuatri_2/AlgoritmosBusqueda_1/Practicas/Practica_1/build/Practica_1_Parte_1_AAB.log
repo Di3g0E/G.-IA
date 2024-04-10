@@ -1,0 +1,1063 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2023.12.22)  7 MAR 2024 17:56
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex"
+(c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2023-08-29>
+(C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\lst@mode=\count193
+\lst@gtempboxa=\box51
+\lst@token=\toks18
+\lst@length=\count194
+\lst@currlwidth=\dimen141
+\lst@column=\count195
+\lst@pos=\count196
+\lst@lostspace=\dimen142
+\lst@width=\dimen143
+\lst@newlines=\count197
+\lst@lineno=\count198
+\lst@maxwidth=\dimen144
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count199
+\lst@skipnumbers=\count266
+\lst@framebox=\box52
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen145
+\Gin@req@width=\dimen146
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2023/09/26 version 6.1.0 text color boxes
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen147
+\pgfutil@tempdimb=\dimen148
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box53
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks22
+))
+\pgf@x=\dimen149
+\pgf@y=\dimen150
+\pgf@xa=\dimen151
+\pgf@ya=\dimen152
+\pgf@xb=\dimen153
+\pgf@yb=\dimen154
+\pgf@xc=\dimen155
+\pgf@yc=\dimen156
+\pgf@xd=\dimen157
+\pgf@yd=\dimen158
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count267
+\c@pgf@countb=\count268
+\c@pgf@countc=\count269
+\c@pgf@countd=\count270
+\t@pgf@toka=\toks23
+\t@pgf@tokb=\toks24
+\t@pgf@tokc=\toks25
+\pgf@sys@id@count=\count271
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count272
+\pgfsyssoftpath@bigbuffer@items=\count273
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen159
+\pgfmath@count=\count274
+\pgfmath@box=\box54
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count275
+)) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen160
+\pgf@picmaxx=\dimen161
+\pgf@picminy=\dimen162
+\pgf@picmaxy=\dimen163
+\pgf@pathminx=\dimen164
+\pgf@pathmaxx=\dimen165
+\pgf@pathminy=\dimen166
+\pgf@pathmaxy=\dimen167
+\pgf@xx=\dimen168
+\pgf@xy=\dimen169
+\pgf@yx=\dimen170
+\pgf@yy=\dimen171
+\pgf@zx=\dimen172
+\pgf@zy=\dimen173
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen174
+\pgf@path@lasty=\dimen175
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen176
+\pgf@shorten@start@additional=\dimen177
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box55
+\pgf@hbox=\box56
+\pgf@layerbox@main=\box57
+\pgf@picture@serial@count=\count276
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen178
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen179
+\pgf@pt@y=\dimen180
+\pgf@pt@temp=\dimen181
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen182
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen183
+\pgf@sys@shading@range@num=\count277
+\pgf@shadingcount=\count278
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box58
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box59
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen184
+\pgf@nodesepend=\dimen185
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks29
+\verbatim@line=\toks30
+\verbatim@in@stream=\read3
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks31
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count279
+)
+\tcb@titlebox=\box60
+\tcb@upperbox=\box61
+\tcb@lowerbox=\box62
+\tcb@phantombox=\box63
+\c@tcbbreakpart=\count280
+\c@tcblayer=\count281
+\c@tcolorbox@number=\count282
+\tcb@temp=\box64
+\tcb@temp=\box65
+\tcb@temp=\box66
+\tcb@temp=\box67
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count283
+\l__pdf_internal_box=\box68
+) (c:\Users\Diego\OneDrive - Universidad Rey Juan Carlos\Documentos\GIA_URJC\Curso 2023-24\G.-IA\G.-IA\Curso_2\Cuatri_2\AlgoritmosBusqueda_1\Practicas\Practica_1\build\Practica_1_Parte_1_AAB.aux)
+\openout1 = `Practica_1_Parte_1_AAB.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+\c@lstlisting=\count284
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count285
+\scratchdimen=\dimen186
+\scratchbox=\box69
+\nofMPsegments=\count286
+\nofMParguments=\count287
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count288
+\MPscratchDim=\dimen187
+\MPnumerator=\count289
+\makeMPintoPDFobject=\count290
+\everyMPtoPDFconversion=\toks33
+) (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 43.
+ [1
+
+{C:/Users/Diego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:65: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 # Librerías
+                 
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:65: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 # Librerías
+                 
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[1]
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:110: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.110 ...do[i]:  # Verificar si la lista no está 
+                                                  vacía antes de llamar a p...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:110: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.110 ...do[i]:  # Verificar si la lista no está 
+                                                  vacía antes de llamar a p...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:110: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.110 ... # Verificar si la lista no está vacía 
+                                                  antes de llamar a pop()
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:110: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.110 ... # Verificar si la lista no está vacía 
+                                                  antes de llamar a pop()
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[2]
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:189: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 ...iscos = int(input("Introduzca el número 
+                                                  de discos: "))
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:189: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 ...iscos = int(input("Introduzca el número 
+                                                  de discos: "))
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[3]
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:211: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 ...int(input("\nAhora, introduce el tamaño 
+                                                  máximo que podrá tener e...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:211: LaTeX Error: Invalid UTF-8 byte "B1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 ...int(input("\nAhora, introduce el tamaño 
+                                                  máximo que podrá tener e...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:211: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 ...t("\nAhora, introduce el tamaño máximo 
+                                                  que podrá tener el espaci...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:211: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 ...t("\nAhora, introduce el tamaño máximo 
+                                                  que podrá tener el espaci...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:211: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 ... introduce el tamaño máximo que podrá 
+                                                  tener el espacio de estado...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:211: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 ... introduce el tamaño máximo que podrá 
+                                                  tener el espacio de estado...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:214: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.214         print("El número 
+                                de discos debe ser mayor que 0.")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:214: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.214         print("El número 
+                                de discos debe ser mayor que 0.")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:223: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.223 # Código 
+                principal
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:223: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.223 # Código 
+                principal
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:232: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232     print("Algoritmo de Búsqueda 
+                                        en Amplitud:")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:232: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232     print("Algoritmo de Búsqueda 
+                                        en Amplitud:")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:236: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.236         print(f"TIEMPO DE EJECUCIÓN:
+                                            {time_bfs}")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:236: LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.236         print(f"TIEMPO DE EJECUCIÓN:
+                                            {time_bfs}")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:238: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...print("No se ha encontrado una solución 
+                                                  con el tamaño máximo asi...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:238: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...print("No se ha encontrado una solución 
+                                                  con el tamaño máximo asi...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:238: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ... encontrado una solución con el tamaño 
+                                                  máximo asignado al conjun...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:238: LaTeX Error: Invalid UTF-8 byte "B1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ... encontrado una solución con el tamaño 
+                                                  máximo asignado al conjun...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:238: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...ado una solución con el tamaño máximo 
+                                                  asignado al conjunto de es...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:238: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...ado una solución con el tamaño máximo 
+                                                  asignado al conjunto de es...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:241: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.241     print("Algoritmo de Búsqueda 
+                                        en Profundidad:")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:241: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.241     print("Algoritmo de Búsqueda 
+                                        en Profundidad:")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:245: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.245         print(f"TIEMPO DE EJECUCIÓN:
+                                            {time_dfs}")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:245: LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.245         print(f"TIEMPO DE EJECUCIÓN:
+                                            {time_dfs}")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:247: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 ...print("No se ha encontrado una solución 
+                                                  con el tamaño máximo asi...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:247: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 ...print("No se ha encontrado una solución 
+                                                  con el tamaño máximo asi...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:247: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 ... encontrado una solución con el tamaño 
+                                                  máximo asignado al conjun...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:247: LaTeX Error: Invalid UTF-8 byte "B1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 ... encontrado una solución con el tamaño 
+                                                  máximo asignado al conjun...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:247: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 ...ado una solución con el tamaño máximo 
+                                                  asignado al conjunto de es...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:247: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 ...ado una solución con el tamaño máximo 
+                                                  asignado al conjunto de es...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[4]
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:250: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250     print("Algoritmo de Búsqueda 
+                                        A*:")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:250: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250     print("Algoritmo de Búsqueda 
+                                        A*:")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:254: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.254         print(f"TIEMPO DE EJECUCIÓN:
+                                            {time_star}")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:254: LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.254         print(f"TIEMPO DE EJECUCIÓN:
+                                            {time_star}")
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:256: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 ...print("No se ha encontrado una solución 
+                                                  con el tamaño máximo asi...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:256: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 ...print("No se ha encontrado una solución 
+                                                  con el tamaño máximo asi...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:256: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 ... encontrado una solución con el tamaño 
+                                                  máximo asignado al conjun...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:256: LaTeX Error: Invalid UTF-8 byte "B1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 ... encontrado una solución con el tamaño 
+                                                  máximo asignado al conjun...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:256: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 ...ado una solución con el tamaño máximo 
+                                                  asignado al conjunto de es...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+c:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/AlgoritmosBusqueda_1/Practicas/Practica_1/Practica_1_Parte_1_AAB.tex:256: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 ...ado una solución con el tamaño máximo 
+                                                  asignado al conjunto de es...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 266.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 266.
+
+Overfull \hbox (8.58675pt too wide) in paragraph at lines 274--275
+\OT1/cmr/m/n/10 de-cir, los dis-cos siem-pre es-tar^^San colo-ca-dos de la forma $(\OML/cmm/m/it/10 D[];  D[];  :::;  D[]\OT1/cmr/m/n/10 )$). 
+ []
+
+[5]
+Overfull \hbox (15.34782pt too wide) in paragraph at lines 287--288
+[]\OT1/cmr/m/n/10 Generar una nueva con-fig-u-raci^^Son del juego de-spu^^Ses de aplicar este movimiento. 
+ []
+
+[6] [7] [8] [9] [10] (c:\Users\Diego\OneDrive - Universidad Rey Juan Carlos\Documentos\GIA_URJC\Curso 2023-24\G.-IA\G.-IA\Curso_2\Cuatri_2\AlgoritmosBusqueda_1\Practicas\Practica_1\build\Practica_1_Parte_1_AAB.aux)
+ ***********
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2023-08-29>
+ ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 13510 strings out of 475248
+ 272519 string characters out of 5757812
+ 2408785 words of memory out of 5000000
+ 34858 multiletter control sequences out of 15000+600000
+ 562995 words of font info for 53 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 83i,7n,89p,614b,1817s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on "c:\Users\Diego\OneDrive - Universidad Rey Juan Carlos\Documentos\GIA_URJC\Curso 2023-24\G.-IA\G.-IA\Curso_2\Cuatri_2\AlgoritmosBusqueda_1\Practicas\Practica_1\build\Practica_1_Parte_1_AAB.pdf" (11 pages, 171550 bytes).
+PDF statistics:
+ 101 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+
