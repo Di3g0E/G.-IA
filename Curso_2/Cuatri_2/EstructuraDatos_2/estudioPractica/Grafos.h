@@ -21,7 +21,7 @@ public:
         nodes[targetNode][sourceNode] = weight; // Grafo no dirigido
     }   // Añadir arista (con peso)
 
-    const std::unordered_map<T, W>& getEdges(T node) const {
+    const std::unordered_map<T, W>& getEdges(T node) {
         return nodes[node];
     }   // Devolver las aristas conectadas a otro nodo
 
@@ -44,14 +44,31 @@ public:
     auto end() {return nodes.end();}
 
 private:
-    std::unordered_map<T, std::unordered_map<T, W>> nodes;
+    std::unordered_map<T, std::unordered_map<typename T::ID, W>> nodes;
+    std::unordered_map<typename T::ID, T> reverse;
 };
 
-struct city {
+struct City {
     std::string name;
     int population;
-    int suface;
+    int surface;
+
+    using ID = std::string;
+    ID getID() {return ISBN;}
+
+    auto operator<=>(const City& rhs) const = default;
 };
+
+template <>
+struct std::hash<City> {
+    std::size_t operator()(const City& city) const {
+        return ((std::hash<std::string>()(city.name)
+                 ^ (std::hash<int>()(city.population) << 1)) >> 1)
+               ^ (std::hash<float>()(city.surface) << 1);
+    }
+};
+
+
 
 
 

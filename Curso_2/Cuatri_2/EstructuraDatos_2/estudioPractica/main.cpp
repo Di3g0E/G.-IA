@@ -122,6 +122,7 @@ int main() {
     }
     */
 
+    /*
     BasicGraph<int, int> graph;
 
     // Agregar nodos
@@ -165,6 +166,25 @@ int main() {
     // GetEdges muestra la arista si existe y sino la crea "vacia"
     std::cout << "Node 1 - Node 2: " << graph.getEdge(1, 2) << "\n";
     std::cout << "Node 2 - Node 5: " << graph.getEdge(2, 5) << "\n";
+     */     // Grafos
+
+    BasicGraph<City, std::string> cityGraph;
+
+    City Mad = {"Madrid", 9273000, 2188};
+    City Se = {"Sevilla", 2691000, 223};
+
+    cityGraph.addNode(Mad);
+    cityGraph.addNode(Se);
+
+    // Añadir una arista entre Tokyo y Osaka con un peso de 500 (por ejemplo, la distancia en km)
+    cityGraph.setEdge(Mad, Se, 500);
+
+    // Imprimir las ciudades conectadas a Tokyo
+    const auto& edges = cityGraph.getEdges(Mad);
+    for (const auto& [targetCity, weight] : edges) {
+        std::cout << "Tokyo esta conectado a " << targetCity.name << " con un peso de " << weight << std::endl;
+    }
+
 
     return 0;
 }
