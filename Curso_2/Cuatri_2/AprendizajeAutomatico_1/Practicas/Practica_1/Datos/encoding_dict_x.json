@@ -1,0 +1,1 @@
+{"rbc": {"abnormal": 0, "normal": 1}, "pc": {"abnormal": 0, "normal": 1}, "pcc": {"notpresent": 0, "present": 1}, "ba": {"notpresent": 0, "present": 1}, "htn": {"no": 0, "yes": 1}, "dm": {"no": 0, "yes": 1}, "cad": {"no": 0, "yes": 1}, "appet": {"good": 0, "poor": 1}, "pe": {"no": 0, "yes": 1}, "ane": {"no": 0, "yes": 1}}
