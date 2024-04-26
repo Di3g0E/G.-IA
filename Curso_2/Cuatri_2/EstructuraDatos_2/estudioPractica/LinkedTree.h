@@ -60,6 +60,17 @@ public:
         node->children.push_front(root_subTree);
     }
 
+    bool contains(const Node<T>& node, LinkedTree<Node<T>> tree){
+        if (!tree.isEmpty()){
+            auto aux = tree.root;
+            if (aux != node){
+                for () {
+
+                }
+            } else return 1;
+        } else return 0;
+    }
+
 private:
     std::shared_ptr<Node<T>> root = nullptr;
 };
