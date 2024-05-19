@@ -1,0 +1,227 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings} % Para resaltar la sintaxis del código
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{color}
+\usepackage{hyperref}
+
+\usepackage[left=2cm,right=2cm,top=3.5cm,bottom=3.5cm]{geometry}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+% Portada
+\title{\Huge \textbf{Práctica 3. Introducción a SSOO de Tiempo Real}}
+\author{Diego Esclarín Fernández}
+\date{\today}
+
+
+\begin{document}
+
+\begin{titlepage}
+    \maketitle
+    \ 
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{Logo_URJC.png}
+        \label{fig:ejemplo}
+    \end{figure}
+\end{titlepage}
+
+
+% Contenido del documento
+\section{Sistemas Operativos de Tiempo Real}
+
+\subsection{ ¿Qué son los sistemas operativos de tiempo real?}
+Los sistemas operativos de tiempo real (RTOS) son usados en el mundo de la computación donde el tiempo es
+un recurso crítico. Estos sistemas se han diseñaado para procesar datos y ejecutar tareas en tiempo real, ofreciendo
+respuestas rápidas y predecibles, lo cual es necesario para controlar procesos industriales, vehículos autónomos,
+sistemas médicos de emergencia, entre otros. A diferencia de los sistemas operativos de propósito general, que están
+diseñados para una amplia gama de tareas de procesamiento, los RTOS están optimizados para garantizar que las
+tareas críticas se completen en el tiempo requerido. Esto se logra a través de la gestión eficiente de las prioridades
+de las tareas y el uso de algoritmos de planificación que pueden manejar un alto grado de interrupciones y cambios
+de contexto, asegurando así la estabilidad y la fiabilidad del sistema \cite{ref1} \cite{ref2} \cite{ref5} \cite{ref6}.
+
+\subsection{ Características principales de los sistemas operativos de tiempo real}
+\begin{itemize}
+  \item \textbf{Determinismo}: Realizan operaciones en instantes de tiempo fijos predeterminados o dentro de intervalos de
+  tiempo predeterminados \cite{ref1}.
+
+  \item \textbf{Uso eficiente de la memoria}: Los sistemas operativos de tiempo real (RTOS) están diseñados para ser
+  ligeros y eficientes. Están opttimizados para aplicaciones integradas que normalmente tienen recursos limitados,
+  incluyendo la memoria. Por lo tanto, los RTOS están diseñados para utilizar la menor cantidad de memoria
+  posible, lo que permite que se ejecuten en dispositivos con recursos limitados \cite{ref2}.
+  
+  \item \textbf{Respuesta rápida a eventos}: Los RTOS están diseñados para responder rápidamente a los eventos. Esto se
+  debe a que muchas aplicaciones de tiempo real tienen requisitos estrictos de tiempo de respuesta. Por ejemplo,
+  en un sistema de control de tráfico aéreo, un retraso en la respuesta a un evento podría tener consecuencias
+  desastrosas. Por lo tanto, los RTOS están diseñados para garantizar que puedan responder a los eventos dentro
+  de un límite de tiempo predecible \cite{ref2} \cite{ref6}.
+
+  \item \textbf{Multi-arquitectura}: El código puede ser portado a cualquier tipo de CPU \cite{ref1} \cite{ref2}.
+  
+  \item \textbf{Planificación de procesos en tiempo real}: La planificación de procesos en tiempo real es una característica
+  clave de los RTOS. Los RTOS utilizan algoritmos de planificación especializados para determinar qué tarea
+  debe ejecutarse en un momento dado. Estos algoritmos toman en cuenta las prioridades de las tareas y sus
+  requisitos de tiempo para asegurar que todas las tareas se ejecuten de manera oportuna \cite{ref1} \cite{ref2}.
+  
+  \item \textbf{Comunicación interprocesos}: Las comunicaciones entre procesos están soportadas de una manera precisa
+  y estable.
+  
+  \item \textbf{Control por parte del usuario}: Los usuarios tienen un mayor control sobre los procesos en comparación con
+  los sistemas operativos de propósito general. Esto se debe a que los RTOS están diseñados para permitir a los
+  usuarios controlar de manera precisa cómo y cuándo se ejecutan las tareas. Esto es especialmente importante
+  en aplicaciones de tiempo real, donde el tiempo de ejecución de las tareas puede ser crítico \cite{ref1} \cite{ref2} 
+  \cite{ref5} \cite{ref6} \cite{ref7} \cite{ref10} \cite{ref11}.
+\end{itemize}
+
+
+\newpage
+
+\subsection{Diferencias con otros tipos de sistemas operativos}
+
+Los sistemas operativos de tiempo compartido y los sistemas operativos en tiempo real (RTOS) representan dos
+enfoques distintos para la gestión de tareas en la informática. Los sistemas operativos de tiempo compartido están
+diseñados para permitir que múltiples usuarios utilicen un sistema informático de manera interactiva y simultánea.
+Esto se logra mediante un proceso de planificación sofisticado que asigna tiempo de CPU a cada usuario de manera
+eficiente, dando la apariencia de que todos los programas se ejecutan al mismo tiempo. Por otro lado, los RTOS
+están optimizados para aplicaciones críticas donde el tiempo de respuesta es crucial. Aunque están diseñados para
+enfocarse en una tarea principal a la vez, los RTOS modernos son capaces de multitarea gracias al cambio de
+contexto, un mecanismo que les permite cambiar entre tareas de manera rápida y controlada. Este proceso es
+fundamental para mantener la operación fluida y responder a eventos en tiempo real sin comprometer la fiabilidad
+del sistema \cite{ref4} \cite{ref9}.
+
+El cambio de contexto en los RTOS es un procedimiento altamente optimizado que minimiza el tiempo de
+inactividad de la CPU durante las transiciones entre tareas. Esto es esencial en sistemas embebidos, como los
+utilizados en dispositivos médicos, sistemas de control industrial y automóviles, donde el fallo o la demora en la
+ejecución de una tarea puede tener consecuencias graves. Los RTOS aseguran que las tareas críticas reciban la
+atención de la CPU cuando lo necesiten, priorizando las operaciones según su importancia y urgencia. Además, los
+RTOS a menudo emplean técnicas como el “preemption”, que permite interrumpir una tarea de menor prioridad
+para dar paso a una más crítica, garantizando así que los tiempos de respuesta sean siempre los adecuados.
+El “preemption” en un Sistema Operativo de Tiempo Real (RTOS) se refiere a la capacidad del sistema operativo
+de interrumpir una tarea en ejecución para dar paso a otra tarea de mayor prioridad \cite{ref2} \cite{ref5} \cite{ref6}.
+
+
+\subsection{Casos de uso de los sistemas operativos de tiempo real}
+
+Los sistemas operativos de tiempo real se utilizan en aquellos dispositivos o sistemas donde el tiempo de respuesta
+es crítico. Estos sistemas se utilizan comúnmente en aplicaciones de control de procesos industriales, sistemas de
+navegación automotriz, sistemas médicos y aeroespaciales, entre otros. Un ejemplo común de uso de los RTOS es en
+los sistemas de control de tráfico aéreo. Estos sistemas requieren una respuesta en tiempo real a los eventos, ya que
+cualquier retraso podría tener consecuencias graves. Los RTOS permiten que estos sistemas respondan rápidamente
+a los eventos y manejen múltiples tareas simultáneamente, como el seguimiento de múltiples aviones al mismo
+tiempo \cite{ref2} \cite{ref8}.
+
+
+\subsection{Cómo se utilizan los sistemas operativos de tiempo real}
+
+Los sistemas operativos de tiempo real se utilizan para facilitar la multitarea y la integración de tareas en diseños
+con recursos y tiempo limitados. Se utilizan en una amplia variedad de aplicaciones donde la velocidad y la precisión
+son críticas. Algunos ejemplos comunes de uso incluyen sistemas de control de tráfico aéreo, sistemas de navegación
+GPS, sistemas de control industrial, entre otros  \cite{ref2} \cite{ref5} \cite{ref6} \cite{ref8}.
+
+
+\newpage
+
+\section{Implementación de los sistemas operativos de tiempo real}
+
+\subsection{Desarrollo y depuración de aplicaciones en RTOS}
+El desarrollo de aplicaciones en RTOS implica la creación de tareas o procesos que se ejecutan en bucles infinitos, cada 
+uno responsable de una función. Estas tareas se ejecutan de forma independiente en su propio tiempo (aislamiento temporal) 
+y pila de memoria (aislamiento espacial). Los programadores en el RTOS controlan qué tarea debe ejecutarse en la CPU y existen 
+diferentes algoritmos de programación \cite{ref1}.
+
+\subsection{Consideraciones de seguridad y fiabilidad}
+Los sistemas operativos de tiempo real son un tipo concreto de sistema desarrollado para ejecutar aplicaciones que disponen 
+de algún tipo de restricción temporal. Estos sistemas están diseñados para responder de manera adecuada ante varias formas de 
+fallo, incluso concurrentes \cite{ref10}. En aplicaciones críticas para la seguridad, como dispositivos médicos y sistemas automotrices, 
+cualquier falla en el sistema operativo podría tener consecuencias catastróficas. Como resultado, RTOS debe probarse y certificarse 
+rigurosamente para cumplir con los estándares de seguridad y confiabilidad de la industria \cite{ref12}.
+
+
+\section{Tendencias y desarrollos en sistemas operativos de tiempo real}
+
+\subsection{Incorporación de técnicas de inteligencia artificial para mejorar la planificación de tareas}
+La inteligencia artificial (IA) contribuye a mejorar la planificación de tareas mediante la automatización y asignación inteligente 
+de las mismas. Esto se logra analizando la información disponible sobre las habilidades y capacidades de los miembros del equipo, así 
+como la carga de trabajo actual y los plazos de entrega \cite{ref13}.
+
+\subsection{Soporte para sistemas ciberfísicos y el Internet de las cosas (IoT)}
+Un sistema ciberfísico se puede entender como la integración total del mundo material con un mundo paralelo implementado en software. 
+Esto permite la comunicación tanto de objetos como de personas y/o servicios entre sí permitiendo optimizar procesos tanto cotidianos 
+como comerciales \cite{ref14}. El Internet de las cosas (IoT) sirve para conectar y automatizar objetos físicos cotidianos a través de Internet, 
+permitiendo la recolección, análisis y uso de datos en tiempo real \cite{ref15}.
+
+\subsection{Avances en la seguridad y la certificación de sistemas críticos}
+Los sistemas operativos de tiempo real deben probarse y certificarse rigurosamente para cumplir con los estándares de seguridad y 
+confiabilidad de la industria \cite{ref12}. Recientemente, se ha publicado una nueva guía CCN-STIC de perfilado de seguridad para Windows y se han 
+actualizado otras tres guías CCN-STIC sobre el procedimiento de acreditación de entidades implementadoras de guías CCN-STIC \cite{ref3}.
+
+
+
+\newpage
+
+
+\begin{thebibliography}{99} % Usamos 99 si esperamos menos de 100 referencias
+    
+    \bibitem{ref1} Wikipedia. \textit{Sistema operativo de tiempo real - Wikipedia, la enciclopedia libre}. Disponible en: \url{https://es.wikipedia.org/wiki/Sistema_operativo_de_tiempo_real}
+
+    \bibitem{ref2} Digikey. \textit{Sistemas operativos en tiempo real (RTOS) y sus aplicaciones}. Disponible en: \url{https://www.digikey.com/es/articles/real-time-operating-systems-and-their-applications}
+    
+    \bibitem{ref3} CN-CERT. \textit{El CCN publica una nueva guía CCN-STIC de perfilado de seguridad para Windows y actualiza otras tres}. Disponible en: \url{https://www.ccn-cert.cni.es/es/seguridad-al-dia/novedades-ccn-cert/12948-el-ccn-publica-una-nueva-guia-ccn-stic-de-perfilado-de-seguridad-para-windows-y-actualiza-otras-tres.html}
+    
+    \bibitem{ref4} Gadget Info. \textit{Diferencia entre el tiempo compartido y el sistema operativo en tiempo real}. Disponible en: \url{https://es.gadget-info.com/difference-between-time-sharing}
+    
+    \bibitem{ref5} Herschel González. \textit{¿Qué es un Sistema Operativo en Tiempo Real y para qué sirve?}. Disponible en: \url{https://herschelgonzalez.com/que-es-un-sistema-operativo-en-tiempo-real-y-para-que-sirve/}
+    
+    \bibitem{ref6} Paola Coyla. \textit{¿Qué es un Sistema Operativo en Tiempo Real?}. Disponible en: \url{https://electronicaonline.net/software-y-apps/aplicaciones/sistema-operativo-en-tiempo-real-rtos/}
+    
+    \bibitem{ref7} EcuRed. \textit{Sistema Operativo de Tiempo Real - EcuRed}. Disponible en: \url{https://www.ecured.cu/Sistema_Operativo_de_Tiempo_Real}
+    
+    \bibitem{ref8} TecnoFAQ. \textit{¿Dónde Se Utilizan Los Sistemas Operativos En Tiempo Real? - FAQs De Tecnología}. Disponible en: \url{https://tecnofaq.com/donde-se-utilizan-los-sistemas-operativos-en-tiempo-real/}
+    
+    \bibitem{ref9} Comprendamos. \textit{Comparativa de sistemas operativos de tiempo real y sistemas operativos de tiempo compartido, para plataforma intel x86 y sus compatibles}. Disponible en: \url{https://www.comprendamos.org/alephzero/63/comparativadesi.html}
+    
+    \bibitem{ref10} INCIBE-CERT. \textit{Sistemas operativos de tiempo real, bastionado y funcionamiento}. Disponible en: \url{https://www.incibe.es/incibe-cert/blog/sistemas-operativos-tiempo-real-bastionado-y-funcionamiento}
+    
+    \bibitem{ref11} TIPOSDE. \textit{Tipos De Sistemas Operativos Tiempo Real}. Disponible en: \url{https://tiposde.net/tipos-de-sistemas-operativos-tiempo-real/}
+
+    \bibitem{ref12} CronicaWeb. \textit{Sistemas operativos en tiempo real: aplicaciones y desafíos}. Disponible en: \url{https://www.cronicaweb.com/sistemas-operativos-en-tiempo-real-aplicaciones-y-desafios/}
+
+    \bibitem{ref13} Appian. \textit{Optimización de procesos mediante Inteligencia Artificial: 5 formas de potenciar la eficiencia empresarial}. Disponible en: \url{https://appian.com/es/blog/acp/process-automation/ai-process-optimization-how-use.html}
+
+    \bibitem{ref14} CodigoIoT. \textit{Internet de las Cosas}. Disponible en: \url{https://www.codigoiot.com/internet-de-las-cosas/}
+
+    \bibitem{ref15} Digixem360. \textit{Internet de las cosas (IoT): ¿qué es, cómo funciona y ejemplos?}. Disponible en: \url{https://impactotic.co/tecnologia/internet-de-las-cosas-iot/}
+
+\end{thebibliography}
+
+\end{document}

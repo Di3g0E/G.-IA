@@ -1,0 +1,30 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Wikipedia%
+}{%
+Wikipedia%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+ref1}
+\APACinsertmetastar {%
+ref1}%
+\begin{APACrefauthors}%
+Wikipedia.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2024}.
+\newblock
+\APACrefbtitle {Sistema operativo de tiempo real - Wikipedia, la enciclopedia
+  libre} {Sistema operativo de tiempo real - wikipedia, la enciclopedia libre}.
+\newblock
+\begin{APACrefURL}
+  \url{https://es.wikipedia.org/wiki/Sistema_operativo_de_tiempo_real}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{[En línea; accedido el 9-mayo-2024]}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

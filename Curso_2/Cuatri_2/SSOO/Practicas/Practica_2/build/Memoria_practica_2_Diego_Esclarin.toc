@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introducción}{2}{}%
+\contentsline {section}{\numberline {2}Descripción del Juego del STOP}{2}{}%
+\contentsline {section}{\numberline {3}Aspectos Técnicos}{2}{}%
+\contentsline {section}{\numberline {4}Arquitectura del Servidor}{3}{}%
+\contentsline {section}{\numberline {5}Implementación del Cliente/Servidor}{3}{}%
+\contentsline {subsection}{\numberline {5.1}Api}{3}{}%
+\contentsline {subsection}{\numberline {5.2}Supervisor: stop.conf}{4}{}%
+\contentsline {subsection}{\numberline {5.3}Servidor}{5}{}%
+\contentsline {subsection}{\numberline {5.4}Cliente}{7}{}%
+\contentsline {section}{\numberline {6}Sincronización y Concurrencia}{9}{}%
+\contentsline {section}{\numberline {7}Pruebas y Resultados}{10}{}%
+\contentsline {section}{\numberline {8}Conclusiones}{10}{}%
+\contentsline {section}{\numberline {9}Referencias}{10}{}%
