@@ -54,7 +54,7 @@ public:
     LinkedTree<T> cut(Node<T>* node) {
         auto parent = getParent(node);
         std::shared_ptr<Node<T>> shared_node;
-        for (auto it = parent->children.begin(); it != parent->children.end();) {
+            for (auto it = parent->children.begin(); it != parent->children.end();) {
             shared_node = *it;
             if (shared_node.get()  == node) {
                 parent->children.erase(it);

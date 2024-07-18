@@ -11,7 +11,7 @@ public:
 
     EvenPosIterator& operator++() {
         ++it;
-        if (it != end) ++it;
+        if ((it != end) && (it % 2 != 0)) { ++it; }
         return *this;
     }
     

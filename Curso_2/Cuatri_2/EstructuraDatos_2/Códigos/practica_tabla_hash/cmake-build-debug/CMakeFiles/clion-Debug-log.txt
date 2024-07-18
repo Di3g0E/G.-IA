@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.3.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S "C:\Users\Diego\OneDrive - Universidad Rey Juan Carlos\Documentos\GIA_URJC\Curso 2023-24\G.-IA\G.-IA\Curso_2\Cuatri_2\EstructuraDatos_2\practica_tabla_hash" -B "C:\Users\Diego\OneDrive - Universidad Rey Juan Carlos\Documentos\GIA_URJC\Curso 2023-24\G.-IA\G.-IA\Curso_2\Cuatri_2\EstructuraDatos_2\practica_tabla_hash\cmake-build-debug"
+"C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.3.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S "C:\Users\Diego\OneDrive - Universidad Rey Juan Carlos\Documentos\GIA_URJC\Curso 2023-24\G.-IA\Curso_2\Cuatri_2\EstructuraDatos_2\Códigos\practica_tabla_hash" -B "C:\Users\Diego\OneDrive - Universidad Rey Juan Carlos\Documentos\GIA_URJC\Curso 2023-24\G.-IA\Curso_2\Cuatri_2\EstructuraDatos_2\Códigos\practica_tabla_hash\cmake-build-debug"
 -- The C compiler identification is GNU 11.2.0
 -- The CXX compiler identification is GNU 11.2.0
 -- Detecting C compiler ABI info
@@ -7,10 +7,24 @@
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
+CMake Warning in C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/Cuatri_2/EstructuraDatos_2/Códigos/practica_tabla_hash/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeLists.txt:
+  The object file directory
+
+    C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/Cuatri_2/EstructuraDatos_2/Códigos/practica_tabla_hash/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_9a244.dir/./
+
+  has 224 characters.  The maximum full path to an object file is 250
+  characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+
+    CMakeCXXCompilerABI.cpp.obj
+
+  cannot be safely placed under this directory.  The build may not work
+  correctly.
+
+
 -- Detecting CXX compiler ABI info - done
 -- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/G.-IA/Curso_2/Cuatri_2/EstructuraDatos_2/practica_tabla_hash/cmake-build-debug
+-- Build files have been written to: C:/Users/Diego/OneDrive - Universidad Rey Juan Carlos/Documentos/GIA_URJC/Curso 2023-24/G.-IA/Curso_2/Cuatri_2/EstructuraDatos_2/Códigos/practica_tabla_hash/cmake-build-debug

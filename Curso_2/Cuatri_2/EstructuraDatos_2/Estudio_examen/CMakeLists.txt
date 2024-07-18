@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(untitled main.cpp LinkedBinaryTree.h)
+add_executable(untitled main.cpp LinkedBinaryTree.h BinaryTree.h)
